@@ -1,10 +1,11 @@
 import numpy as np
 from numpy.linalg import inv, norm
 from numpy import identity, dot
+from scipy.linalg import sqrtm
 
 
 class Conceptor:
-    def from_states(self, state_cloud, aperture=0.1):
+    def from_states(self, state_cloud, aperture=0.8):
         self.aperture = aperture
         self.correlation_matrix = np.corrcoef(state_cloud)
         self.dims = len(self.correlation_matrix)
@@ -15,7 +16,7 @@ class Conceptor:
 
         return self
 
-    def from_conceptor_matrix(self, conceptor_matrix, aperture=0.1):
+    def from_conceptor_matrix(self, conceptor_matrix, aperture=0.8):
         self.conceptor_matrix = conceptor_matrix
         self.dims = len(conceptor_matrix)
         self.aperture = aperture
@@ -45,8 +46,8 @@ def conjunction(conceptors):
 def binary_disjunction(x, y):
     # Equation (26), page 52
     id = identity(x.dims)
-    result = inv(id + inv(x.conceptor_matrix * inv(id - x.conceptor_matrix) +
-                 y.conceptor_matrix * inv(id - y.conceptor_matrix)))
+    result = inv(id + inv(x.conceptor_matrix @ inv(id - x.conceptor_matrix) +
+                 y.conceptor_matrix @ inv(id - y.conceptor_matrix)))
     return Conceptor().from_conceptor_matrix(result)
 
 
@@ -83,19 +84,24 @@ def aperture_adaptation(x, new_aperture):
     # Equation (16), page 44
     assert x.aperture
     aperture_ratio = new_aperture / x.aperture
-    result = x.conceptor_matrix * inv(x.conceptor_matrix + aperture_ratio ** (-2) * (identity(x.dims) - x.conceptor_matrix))
+    result = x.conceptor_matrix @ \
+        inv(x.conceptor_matrix + aperture_ratio ** (-2)
+            * (identity(x.dims) - x.conceptor_matrix))
     return Conceptor().from_conceptor_matrix(result, aperture=new_aperture)
 
 
 def similarity(x, y):
     ui, si, vhi = np.linalg.svd(x.conceptor_matrix)
     uj, sj, vhj = np.linalg.svd(y.conceptor_matrix)
-    result = (norm(dot(np.diag(si) ** (1/2) * ui.T, uj * np.diag(sj) ** (1/2))) ** 2) / (norm(si) * norm(sj))
+    result = (norm(sqrtm(np.diag(si)) @ ui.T @ uj @
+              sqrtm(np.diag(sj))) ** 2) / (norm(si) * norm(sj))
+
     return result
 
 
 def alignment(x, y):
-    return dot(y.T * x.conceptor_matrix, y)
+    y /= norm(y)
+    return dot(y.T @ x.conceptor_matrix, y)
 
 
 def is_pos_def(A):
