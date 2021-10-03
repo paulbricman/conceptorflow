@@ -1,6 +1,6 @@
 import numpy as np
-from numpy.linalg import inv
-from numpy import identity
+from numpy.linalg import inv, norm
+from numpy import identity, dot
 
 
 class Conceptor:
@@ -18,7 +18,7 @@ class Conceptor:
     def from_conceptor_matrix(self, conceptor_matrix, aperture=0.1):
         self.conceptor_matrix = conceptor_matrix
         self.dims = len(conceptor_matrix)
-        self.aperture = None
+        self.aperture = aperture
         self.correlation_matrix = None
 
         return self
@@ -77,6 +77,25 @@ def compare(x, y):
         return -1
     else:
         return 0
+
+
+def aperture_adaptation(x, new_aperture):
+    # Equation (16), page 44
+    assert x.aperture
+    aperture_ratio = new_aperture / x.aperture
+    result = x.conceptor_matrix * inv(x.conceptor_matrix + aperture_ratio ** (-2) * (identity(x.dims) - x.conceptor_matrix))
+    return Conceptor().from_conceptor_matrix(result, aperture=new_aperture)
+
+
+def similarity(x, y):
+    ui, si, vhi = np.linalg.svd(x.conceptor_matrix)
+    uj, sj, vhj = np.linalg.svd(y.conceptor_matrix)
+    result = (norm(dot(np.diag(si) ** (1/2) * ui.T, uj * np.diag(sj) ** (1/2))) ** 2) / (norm(si) * norm(sj))
+    return result
+
+
+def alignment(x, y):
+    return dot(y.T * x.conceptor_matrix, y)
 
 
 def is_pos_def(A):
