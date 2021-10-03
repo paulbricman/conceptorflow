@@ -69,6 +69,7 @@ def negation(x):
 
 
 def compare(x, y):
+    # Proposition 13, page 58
     diff_y_x = y.conceptor_matrix - x.conceptor_matrix
     diff_x_y = x.conceptor_matrix - y.conceptor_matrix
 
@@ -91,6 +92,7 @@ def aperture_adaptation(x, new_aperture):
 
 
 def similarity(x, y):
+    # Equation (10), page 38
     ui, si, vhi = np.linalg.svd(x.conceptor_matrix)
     uj, sj, vhj = np.linalg.svd(y.conceptor_matrix)
     result = (norm(sqrtm(np.diag(si)) @ ui.T @ uj @
@@ -100,6 +102,7 @@ def similarity(x, y):
 
 
 def alignment(x, y):
+    # inspired by page 75
     y /= norm(y)
     return dot(y.T @ x.conceptor_matrix, y)
 
