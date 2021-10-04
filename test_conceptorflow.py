@@ -1,6 +1,8 @@
+from numpy.core.numeric import identity
 from conceptorflow import Conceptor, alignment, aperture_adaptation, compare, conjunction, disjunction, is_pos_def, negation, similarity
 import conceptorflow as cf
 import numpy as np
+from numpy.linalg import inv, norm
 
 
 def test_conceptor_pos_def():
@@ -85,11 +87,6 @@ def test_similarity():
     states = 10 * np.identity(3)
     c2 = Conceptor().from_states(states)
 
-    print(c1.conceptor_matrix)
-    print(c2.conceptor_matrix)
-
-    print(similarity(c1, c1), similarity(c1, c2))
-
     assert np.isclose(similarity(c1, c1), 1)
     assert not np.isclose(similarity(c1, c2), 1)
 
@@ -98,3 +95,14 @@ def test_alignment():
     c1 = Conceptor().from_states(states)
 
     assert alignment(c1, states[0]) > alignment(c1, np.ones(3))
+
+def test_correlation_matrix_recovery():
+    states = np.random.rand(3, 3)
+    true_correlation_matrix = np.corrcoef(states)
+    c1 = Conceptor().from_states(states, 0.5)
+    recovered_correlation_matrix = 0.5 ** (-2) * (c1.conceptor_matrix @ inv(identity(c1.dims) - c1.conceptor_matrix))
+
+    print(true_correlation_matrix)
+    print(recovered_correlation_matrix)
+
+    assert np.allclose(true_correlation_matrix, recovered_correlation_matrix)
