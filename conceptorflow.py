@@ -5,19 +5,20 @@ from scipy.linalg import sqrtm
 
 
 class Conceptor:
-    def from_states(self, state_cloud, aperture=0.8):
+    def from_states(self, state_cloud, aperture=0.1):
         self.aperture = aperture
-        self.correlation_matrix = np.corrcoef(state_cloud)
+        self.correlation_matrix = np.corrcoef(np.array(state_cloud))
         self.dims = len(self.correlation_matrix)
 
         # Equation (7), page 36
-        self.conceptor_matrix = inv(
-            (self.correlation_matrix + aperture ** (-2) * identity(self.dims))) * self.correlation_matrix
+        self.conceptor_matrix = \
+            inv(self.correlation_matrix + aperture ** (-2) * identity(self.dims)) @ self.correlation_matrix \
+            + 1e-14
 
         return self
 
-    def from_conceptor_matrix(self, conceptor_matrix, aperture=0.8):
-        self.conceptor_matrix = conceptor_matrix
+    def from_conceptor_matrix(self, conceptor_matrix, aperture=0.1):
+        self.conceptor_matrix = conceptor_matrix + 1e-14
         self.dims = len(conceptor_matrix)
         self.aperture = aperture
         self.correlation_matrix = None
@@ -64,14 +65,14 @@ def disjunction(conceptors):
 
 def negation(x):
     # Equation (28), page 52
-    result = identity(x.dims) - x.conceptor_matrix
+    result = identity(x.dims) - x.conceptor_matrix - 2e-14
     return Conceptor().from_conceptor_matrix(result)
 
 
 def compare(x, y):
     # Proposition 13, page 58
-    diff_y_x = y.conceptor_matrix - x.conceptor_matrix
-    diff_x_y = x.conceptor_matrix - y.conceptor_matrix
+    diff_y_x = y.conceptor_matrix - x.conceptor_matrix + 1e-14
+    diff_x_y = x.conceptor_matrix - y.conceptor_matrix + 1e-14
 
     if is_pos_def(diff_x_y):
         return 1
