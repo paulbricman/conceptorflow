@@ -19,6 +19,7 @@ def test_conceptor_pos_def():
     c = Conceptor().from_states(states)
     assert is_pos_def(c.conceptor_matrix)
 
+
 def test_conjunction_commutative():
     states = np.random.rand(3, 3)
     c1 = Conceptor().from_states(states)
@@ -26,7 +27,9 @@ def test_conjunction_commutative():
     states = np.random.rand(3, 3)
     c2 = Conceptor().from_states(states)
 
-    assert np.allclose(conjunction([c1, c2]).conceptor_matrix, conjunction([c2, c1]).conceptor_matrix)
+    assert np.allclose(conjunction(
+        [c1, c2]).conceptor_matrix, conjunction([c2, c1]).conceptor_matrix)
+
 
 def test_conjunction_less_abstract():
     states = np.random.rand(5, 5)
@@ -45,6 +48,7 @@ def test_conjunction_less_abstract():
     assert compare(c1, conjunction([c1, c2])) != -1
     assert compare(c2, conjunction([c1, c2])) != -1
 
+
 def test_disjunction_commutative():
     states = np.random.rand(3, 3)
     c1 = Conceptor().from_states(states)
@@ -52,7 +56,9 @@ def test_disjunction_commutative():
     states = np.random.rand(3, 3)
     c2 = Conceptor().from_states(states)
 
-    assert np.allclose(disjunction([c1, c2]).conceptor_matrix, disjunction([c2, c1]).conceptor_matrix)
+    assert np.allclose(disjunction(
+        [c1, c2]).conceptor_matrix, disjunction([c2, c1]).conceptor_matrix)
+
 
 def test_disjunction_more_abstract():
     states = np.random.rand(3, 3)
@@ -65,6 +71,7 @@ def test_disjunction_more_abstract():
     assert compare(disjunction([c1, c2]), c2) == 1
     assert compare(c1, disjunction([c1, c2])) == -1
     assert compare(c2, disjunction([c1, c2])) == -1
+
 
 def test_de_morgan():
     states = np.random.rand(3, 3)
@@ -80,6 +87,7 @@ def test_de_morgan():
     print(rhs)
     assert np.allclose(lhs, rhs, atol=1e-4)
 
+
 def test_aperture_adaptation_reversible():
     states = np.random.rand(3, 3)
     c1 = Conceptor().from_states(states)
@@ -87,6 +95,7 @@ def test_aperture_adaptation_reversible():
     c2 = aperture_adaptation(aperture_adaptation(c1, 1), 0.1)
 
     assert np.allclose(c1.conceptor_matrix, c2.conceptor_matrix)
+
 
 def test_similarity():
     states = np.random.rand(3, 3)
@@ -103,7 +112,8 @@ def test_correlation_matrix_recovery():
     states = np.random.rand(3, 3)
     true_correlation_matrix = np.corrcoef(states)
     c1 = Conceptor().from_states(states, 0.5)
-    recovered_correlation_matrix = 0.5 ** (-2) * (c1.conceptor_matrix @ inv(identity(c1.dims) - c1.conceptor_matrix))
+    recovered_correlation_matrix = 0.5 ** (-2) * (
+        c1.conceptor_matrix @ inv(identity(c1.dims) - c1.conceptor_matrix))
 
     print(true_correlation_matrix)
     print(recovered_correlation_matrix)
