@@ -1,29 +1,42 @@
 import numpy as np
+from numpy.core.fromnumeric import sort
 from numpy.linalg import inv, norm
 from numpy import identity, dot
 from scipy.linalg import sqrtm
+import matplotlib.pyplot as plt
 
 
 class Conceptor:
-    def from_states(self, state_cloud, aperture=0.1):
+    def from_states(self, state_cloud, aperture=10):
         self.aperture = aperture
         self.correlation_matrix = np.corrcoef(np.array(state_cloud))
         self.dims = len(self.correlation_matrix)
 
         # Equation (7), page 36
         self.conceptor_matrix = \
-            inv(self.correlation_matrix + aperture ** (-2) * identity(self.dims)) @ self.correlation_matrix \
-            + 1e-14
+            inv(self.correlation_matrix + aperture ** (-2) * identity(self.dims)) @ self.correlation_matrix
 
         return self
 
+
     def from_conceptor_matrix(self, conceptor_matrix, aperture=0.1):
-        self.conceptor_matrix = conceptor_matrix + 1e-14
+        self.conceptor_matrix = conceptor_matrix
         self.dims = len(conceptor_matrix)
         self.aperture = aperture
         self.correlation_matrix = None
 
         return self
+
+    
+    def plot_spectrum(self):
+        u, s, vh = np.linalg.svd(self.conceptor_matrix)
+        s = sorted(s, reverse=True)
+        fig, ax = plt.subplots()
+        ax.set_title('Singular values of conceptor matrix')
+        ax.bar(list(range(self.dims, 0, -1)), s)
+        ax.invert_xaxis()
+        ax.plot()
+        plt.show()
 
 
 def binary_conjunction(x, y):
@@ -65,14 +78,14 @@ def disjunction(conceptors):
 
 def negation(x):
     # Equation (28), page 52
-    result = identity(x.dims) - x.conceptor_matrix - 2e-14
+    result = identity(x.dims) - x.conceptor_matrix
     return Conceptor().from_conceptor_matrix(result)
 
 
 def compare(x, y):
     # Proposition 13, page 58
-    diff_y_x = y.conceptor_matrix - x.conceptor_matrix + 1e-14
-    diff_x_y = x.conceptor_matrix - y.conceptor_matrix + 1e-14
+    diff_y_x = y.conceptor_matrix - x.conceptor_matrix
+    diff_x_y = x.conceptor_matrix - y.conceptor_matrix
 
     if is_pos_def(diff_x_y):
         return 1
@@ -102,15 +115,25 @@ def similarity(x, y):
     return result
 
 
-def alignment(x, y):
-    # inspired by page 75
-    y /= norm(y)
-    return dot(y.T @ x.conceptor_matrix, y)
-
-
-def is_pos_def(A):
-    try:
-        np.linalg.cholesky(A)
-        return True
-    except np.linalg.LinAlgError:
+def is_pos_def(x, pos_sv_tol=1e-16, flip_vecs_tol=1e-13):
+    '''
+    pos_sv_tol: tolerance for singular values to be considered positive
+    flip_vecs_tol: tolerance for checking equality between U and V.T
+    '''
+    if not np.allclose(x, x.T):
         return False
+
+    u, s, vh = np.linalg.svd(x)
+
+    if np.all(s < -pos_sv_tol):
+        return False
+
+    for sv_idx, sv in enumerate(s):
+        if sv > flip_vecs_tol:
+            if not np.allclose(u.T[sv_idx], vh[sv_idx]):
+                return False
+        else:
+            if not (np.allclose(u.T[sv_idx], vh[sv_idx]) or np.allclose(u.T[sv_idx], -vh[sv_idx])):
+                return False
+    
+    return True
