@@ -4,10 +4,11 @@ from numpy.linalg import inv, norm
 from numpy import identity, dot
 from scipy.linalg import sqrtm
 import matplotlib.pyplot as plt
+from matplotlib.patches import Ellipse
 
 
 class Conceptor:
-    def from_states(self, state_cloud, aperture=10):
+    def from_states(self, state_cloud, aperture=5):
         self.aperture = aperture
         self.correlation_matrix = np.corrcoef(np.array(state_cloud))
         self.dims = len(self.correlation_matrix)
@@ -137,3 +138,39 @@ def is_pos_def(x, pos_sv_tol=1e-16, flip_vecs_tol=1e-13):
                 return False
     
     return True
+
+
+def plot_ellipses(conceptors):
+    matrices = [c.conceptor_matrix for c in conceptors]
+    print(matrices)
+
+    svs = [np.linalg.svd(c.conceptor_matrix)[1] for c in conceptors]
+    angles = [cos_sim(np.linalg.svd(c.conceptor_matrix)[0] @ [1, 0], [1, 0]) for c in conceptors]
+
+    print(svs)
+    print(angles)
+
+    ells = [Ellipse(xy=(0, 0),
+                    width=2 * svs[i][0], height=2 * svs[i][1],
+                    angle=angles[i] * 360)
+            for i in range(len(conceptors))]
+
+    fig, ax = plt.subplots(subplot_kw={'aspect': 'equal'})
+    colors = [[0.2, 0.3, 0.6], [0.2, 0.3, 0.8], [0.1, 0.9, 0.1], [0.1, 0.9, 0.1]]
+    for e_idx, e in enumerate(ells):
+        ax.add_artist(e)
+        e.set_clip_box(ax.bbox)
+        e.set_alpha(0.3)
+        e.set_facecolor(np.random.rand(3))
+
+    ax.set_xlim(-1, 1)
+    ax.set_ylim(-1, 1)
+
+    plt.show()
+
+
+def cos_sim(a, b):
+    dot_product = np.dot(a, b)
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
+    return dot_product / (norm_a * norm_b)

@@ -144,3 +144,16 @@ def test_plot_spectrum():
     c1 = Conceptor().from_states(states)
     c1.plot_spectrum()
     assert True
+
+
+def test_plot_ellipses():
+    states = np.array([[1, 2, 3], [3, 4, 8.9]])
+    c1 = Conceptor().from_states(states)
+
+    states = np.array([[1, 1.7, 2], [-10, 2, 9]])
+    c2 = Conceptor().from_states(states)
+
+    c3 = cf.disjunction([c1, c2])
+    c4 = cf.conjunction([c1, c2])
+
+    cf.plot_ellipses([c1, c2, c3, c4])
