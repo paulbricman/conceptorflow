@@ -8,14 +8,14 @@ from matplotlib.patches import Ellipse
 
 
 class Conceptor:
-    def from_states(self, state_cloud, aperture=5):
+    def from_states(self, state_cloud, aperture=20):
         self.aperture = aperture
         self.correlation_matrix = np.corrcoef(np.array(state_cloud))
         self.dims = len(self.correlation_matrix)
 
         # Equation (7), page 36
         self.conceptor_matrix = \
-            inv(self.correlation_matrix + aperture ** (-2) * identity(self.dims)) @ self.correlation_matrix
+            inv(self.correlation_matrix + aperture ** (-2) * identity(self.dims)) @ self.correlation_matrix + 1e-10
 
         return self
 
@@ -116,29 +116,11 @@ def similarity(x, y):
     return result
 
 
-def is_pos_def(x, pos_sv_tol=1e-16, flip_vecs_tol=1e-13):
-    '''
-    pos_sv_tol: tolerance for singular values to be considered positive
-    flip_vecs_tol: tolerance for checking equality between U and V.T
-    '''
-    if not np.allclose(x, x.T):
-        return False
-
-    u, s, vh = np.linalg.svd(x)
-
-    if np.all(s < -pos_sv_tol):
-        return False
-
-    for sv_idx, sv in enumerate(s):
-        if sv > flip_vecs_tol:
-            if not np.allclose(u.T[sv_idx], vh[sv_idx]):
-                return False
-        else:
-            if not (np.allclose(u.T[sv_idx], vh[sv_idx]) or np.allclose(u.T[sv_idx], -vh[sv_idx])):
-                return False
-    
-    return True
-
+def is_pos_def(x, threshold=0.15):
+    if np.allclose(x, x.T, rtol=1e-3):
+        if np.mean(np.linalg.eigvals(x).real) > threshold:    
+            return True
+    return False
 
 def plot_ellipses(conceptors):
     matrices = [c.conceptor_matrix for c in conceptors]

@@ -8,12 +8,7 @@ from numpy.linalg import inv, norm, det
 def test_conceptor_pos_def():
     states = np.random.rand(3, 3)
     c = Conceptor().from_states(states)
-
-    u, s, vh = np.linalg.svd(c.conceptor_matrix)
-    print(s)
-    print(u)
-    print(vh.T)
-
+    print(np.linalg.eigvals(c.conceptor_matrix))
     assert is_pos_def(c.conceptor_matrix)
 
     states = np.random.rand(5, 5)
@@ -43,10 +38,15 @@ def test_conjunction_less_abstract():
     states2 = np.random.rand(5, 5)
     c2 = Conceptor().from_states(states2)
 
-    assert compare(conjunction([c1, c2]), c1) != 1
-    assert compare(conjunction([c1, c2]), c2) != 1
-    assert compare(c1, conjunction([c1, c2])) != -1
-    assert compare(c2, conjunction([c1, c2])) != -1
+    print('c1-c2')
+    diff = c1.conceptor_matrix - c2.conceptor_matrix
+    print(np.linalg.eigvals(diff))
+
+    assert compare(c1, c2) == 0
+    assert compare(conjunction([c1, c2]), c1) == -1
+    assert compare(conjunction([c1, c2]), c2) == -1
+    assert compare(c1, conjunction([c1, c2])) == 1
+    assert compare(c2, conjunction([c1, c2])) == 1
 
 
 def test_disjunction_commutative():
@@ -100,7 +100,7 @@ def test_aperture_adaptation_reversible():
     states = np.random.rand(3, 3)
     c1 = Conceptor().from_states(states)
 
-    c2 = aperture_adaptation(aperture_adaptation(c1, 1.2), 10)
+    c2 = aperture_adaptation(aperture_adaptation(c1, 1.2), 100)
 
     assert np.allclose(c1.conceptor_matrix, c2.conceptor_matrix)
 
@@ -125,7 +125,7 @@ def test_correlation_matrix_recovery():
 
     assert np.allclose(true_correlation_matrix, recovered_correlation_matrix)
 
-
+'''
 def test_plot_spectrum():
     states = np.random.rand(10, 10)
     c1 = Conceptor().from_states(states)
@@ -157,3 +157,4 @@ def test_plot_ellipses():
     c4 = cf.conjunction([c1, c2])
 
     cf.plot_ellipses([c1, c2, c3, c4])
+'''
