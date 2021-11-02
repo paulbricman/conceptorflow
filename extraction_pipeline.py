@@ -26,7 +26,7 @@ def get_sentences(keyword, dataset, context_size=300):
     pattern = re.compile(keyword)
     raw_contexts = []
 
-    for doc in dataset['train'][:100]['text']:
+    for doc in dataset['train']['text']:
         for match in pattern.finditer(doc):
             start = max(0, match.start() - context_size)
             end = min(len(doc), match.end() + context_size)
@@ -85,5 +85,5 @@ def is_sublist(ls1, ls2):
 def get_sublist_idx(x, y):
     l1, l2 = len(y), len(x)
     for i in range(l1):
-        if y[i:i+l2] == x:
+        if torch.equal(y[i:i+l2], x):
             return i
