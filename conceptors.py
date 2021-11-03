@@ -10,8 +10,9 @@ from matplotlib.patches import Ellipse
 class Conceptor:
     def from_states(self, state_cloud, aperture=20):
         self.aperture = aperture
-        self.correlation_matrix = np.corrcoef(np.array(state_cloud))
+        self.correlation_matrix = np.corrcoef(np.array(state_cloud).T)
         self.dims = len(self.correlation_matrix)
+        del state_cloud
 
         # Equation (7), page 36
         self.conceptor_matrix = \
