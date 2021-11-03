@@ -5,6 +5,16 @@ from transformers import AutoTokenizer, AutoModel
 import torch
 import numpy as np
 import pickle
+import os
+from conceptors import Conceptor
+
+
+def generate_conceptors(state_clouds_directory, conceptor_directory):
+    for filename in os.listdir(state_clouds_directory):
+        print('(*) working on:', filename)
+        state_cloud = pickle.load(open(state_clouds_directory + '/' + filename, 'rb'))
+        c = Conceptor().from_states(state_cloud)
+        pickle.dump(c.conceptor_matrix, open(conceptor_directory + '/' + filename, 'wb+'))
 
 
 def generate_state_clouds(keywords):
