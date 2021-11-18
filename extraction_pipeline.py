@@ -19,8 +19,8 @@ def generate_conceptors(state_clouds_directory, conceptor_directory):
 
 def generate_state_clouds(keywords):
     print('(*) Loading tokenizer and model...')
-    tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-    model = AutoModel.from_pretrained('distilbert-base-uncased')
+    tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
+    model = AutoModel.from_pretrained('bert-base-uncased')
     print('\n\n(*) Loading dataset...')
     dataset = load_dataset('bookcorpusopen')
 
