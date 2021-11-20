@@ -1,0 +1,100 @@
+liquid
+beverage
+saltwater
+gasoline
+water
+juice
+milk
+soft drink
+alcoholic drink
+orange juice
+almond milk
+soy milk
+coke
+pepsi
+coca-cola
+beveragewine
+vodka
+gin
+cocktail
+thinker
+scientist
+philosopher
+einstein
+curie
+newton
+aristotle
+kant
+descartes
+living thing
+plant
+animal
+mushroom
+tree
+flower
+mammal
+reptile
+eucalyptus
+sequoia
+rose
+cat
+monkey
+dog
+horse
+snake
+crocodile
+lizard
+food
+vegetable
+fruit
+dairy
+spinach
+carrot
+potato
+onion
+apple
+banana
+pear
+strawberry
+tomato
+feta
+cottage
+gouda
+baby spinach
+baby carrot
+shallot
+red onion
+golden apple
+red apple
+universe
+galaxy
+solar system
+mars
+jupiter
+earth
+europe
+north america
+asia
+south america
+australia
+africa
+netherlands
+china
+japan
+amsterdam
+beijing
+hong kong
+tokyo
+existence
+substance
+essence
+emotion
+thing
+entity
+ontology
+concept
+hierarchy
+category
+abstract
+concrete
+surface
