@@ -9,12 +9,13 @@ import os
 from conceptors import Conceptor
 
 
-def generate_conceptors(state_clouds_directory, conceptor_directory):
+def generate_conceptors(state_clouds_directory='./clouds', conceptor_directory='./conceptors'):
     for filename in os.listdir(state_clouds_directory):
         print('(*) working on:', filename)
         state_cloud = pickle.load(open(state_clouds_directory + '/' + filename, 'rb'))
-        c = Conceptor().from_states(state_cloud)
-        pickle.dump(c.conceptor_matrix, open(conceptor_directory + '/' + filename, 'wb+'))
+        if isinstance(state_cloud, list):
+            c = Conceptor().from_states(state_cloud)
+            pickle.dump(c.conceptor_matrix, open(conceptor_directory + '/' + filename, 'wb+'))
 
 
 def generate_state_clouds(keywords):
@@ -97,3 +98,6 @@ def get_sublist_idx(x, y):
     for i in range(l1):
         if torch.equal(y[i:i+l2], x):
             return i
+
+
+generate_conceptors()

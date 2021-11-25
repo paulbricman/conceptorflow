@@ -13,7 +13,7 @@ soy milk
 coke
 pepsi
 coca-cola
-beveragewine
+wine
 vodka
 gin
 cocktail
@@ -89,12 +89,12 @@ existence
 substance
 essence
 emotion
-thing
+class
+instance
 entity
-ontology
+prototype
+example
 concept
 hierarchy
 category
-abstract
-concrete
 surface
