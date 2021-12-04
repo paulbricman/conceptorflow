@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import pickle
 import numpy as np
 
-word1 = 'class'
-word2 = 'instance'
+word1 = 'plant'
+word2 = 'monkey'
 
 c1 = Conceptor().from_conceptor_matrix(pickle.load(open('conceptors/' + word1 + '.pickle', 'rb')))
 c2 = Conceptor().from_conceptor_matrix(pickle.load(open('conceptors/' + word2 + '.pickle', 'rb')))
