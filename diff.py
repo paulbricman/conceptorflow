@@ -4,6 +4,8 @@ import numpy as np
 import os
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+import networkx as nx
 
 
 def diff(c1, c2):    
@@ -55,7 +57,7 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean'):
     for row_idx, row in enumerate(mask):
         for col_idx, col in enumerate(row):
             if row_idx != col_idx:
-                if col == True:
+                if col == False:
                     prunes += 1
                 else:
                     if heuristic == 'mean':
@@ -69,14 +71,14 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean'):
                         vals += adjacency_matrix[row_idx][col_idx][3] - 0.5
 
     for col_idx, col in enumerate(np.transpose(mask)):
-        treeness -= np.abs(len([row for row in col if row is False]) - 1)
+        treeness -= np.abs(len([row for row in col if row is True]) - 1)
 
-    return prunes * 0.01 + vals + treeness * 0.01
+    return prunes * 0.1 + vals + treeness * 1
 
 
-def simulated_annealing(epochs=10000, heuristic='mean'):
+def simulated_annealing(epochs=1000, heuristic='mean'):
     weights = pickle.load(open('diffs/diffs.pickle', 'rb'))[1]
-    state = np.zeros((len(weights), len(weights)), dtype=bool)
+    state = np.ones((len(weights), len(weights)), dtype=bool)
     evals = []
 
     for epoch in tqdm(range(epochs)):
@@ -106,9 +108,20 @@ def simulated_annealing(epochs=10000, heuristic='mean'):
     return state
 
 
-mask = simulated_annealing()
-pickle.dump(mask, open('diffs/mask.pickle', 'wb+'))
+def show_graph_with_labels(adjacency_matrix, labels):
+    for i in range(len(adjacency_matrix)):
+        adjacency_matrix[i][i] = False
+    rows, cols = np.where(adjacency_matrix == 1)
+    edges = zip(rows.tolist(), cols.tolist())
+    gr = nx.Graph()
+    gr.add_edges_from(edges)
+    
+    labels_dict = {}
+    for node in gr.nodes:
+        labels_dict[node] = labels[node]
+    nx.draw(gr, node_size=500, labels=labels_dict, with_labels=True)
+    plt.show()
 
-# diffs = compute_adjacency_matrix()
-# print(diffs)
-# pickle.dump(diffs, open('diffs/diffs.pickle', 'wb+'))
+mask = simulated_annealing(epochs=100000)
+pickle.dump(mask, open('diffs/mask.pickle', 'wb+'))
+show_graph_with_labels(pickle.load(open('diffs/mask.pickle', 'rb')), pickle.load(open('diffs/diffs.pickle', 'rb'))[0])
