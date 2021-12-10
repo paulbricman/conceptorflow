@@ -49,20 +49,20 @@ def compute_adjacency_matrix():
     return [list(concepts.keys()), diffs]
 
 
-def eval_solution(mask, adjacency_matrix, heuristic='mean'):
+def eval_solution(mask, adjacency_matrix, heuristic='mean', print_components=False):
     prunes = 0
     vals = 0
-    treeness = 0
+    parentness = 0
+    childness = 0
+    elems = len(mask) * (len(mask) - 1)
     
     for row_idx, row in enumerate(mask):
         for col_idx, col in enumerate(row):
             if row_idx != col_idx:
-                if col == False:
-                    prunes += 1
-                else:
+                if col == True:
+                    prunes -= 1
                     if heuristic == 'mean':
                         vals += adjacency_matrix[row_idx][col_idx][0]
-                        #print('vals', vals)
                     elif heuristic == 'median':
                         vals += adjacency_matrix[row_idx][col_idx][1]
                     elif heuristic == 'pos_ratio':
@@ -71,14 +71,24 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean'):
                         vals += adjacency_matrix[row_idx][col_idx][3] - 0.5
 
     for col_idx, col in enumerate(np.transpose(mask)):
-        treeness -= np.abs(len([row for row in col if row is True]) - 1)
+        parentness -= np.abs(len([row for row_idx, row in enumerate(col) if row == True and row_idx != col_idx]) - 1) / len(mask)
 
-    return prunes * 0.1 + vals + treeness * 1
+    for row_idx, row in enumerate(mask):
+        childness -= max(0, len([col for col_idx, col in enumerate(row) if col == True and col_idx != row_idx]) - 5) / len(mask)
+
+    prunes = prunes / elems * 50
+    vals = vals / elems * 1000
+    parentness = parentness
+    childness = childness
+    
+    if print_components:
+        print(*[round(e, 2) for e in [prunes, vals, parentness, childness]], sep='\t')
+
+    return prunes + vals + parentness + childness
 
 
-def simulated_annealing(epochs=1000, heuristic='mean'):
-    weights = pickle.load(open('diffs/diffs.pickle', 'rb'))[1]
-    state = np.ones((len(weights), len(weights)), dtype=bool)
+def simulated_annealing(weights, epochs=1000, heuristic='mean'):
+    state = np.zeros((len(weights), len(weights)), dtype=bool)
     evals = []
 
     for epoch in tqdm(range(epochs)):
@@ -87,8 +97,9 @@ def simulated_annealing(epochs=1000, heuristic='mean'):
             return state
         
         next = state.copy()
-        next_row = np.random.randint(0, len(weights) - 1)
-        next_col = np.random.randint(0, len(weights) - 1)
+        next_row = np.random.randint(0, len(weights))
+        next_col = np.random.randint(0, len(weights))
+        # print(next_row, next_col)
         next[next_row, next_col] = not next[next_row, next_col]
 
         next_eval = eval_solution(next, weights, heuristic)
@@ -112,16 +123,29 @@ def show_graph_with_labels(adjacency_matrix, labels):
     for i in range(len(adjacency_matrix)):
         adjacency_matrix[i][i] = False
     rows, cols = np.where(adjacency_matrix == 1)
+
+    # print(labels)
+    # print(adjacency_matrix)
+
     edges = zip(rows.tolist(), cols.tolist())
-    gr = nx.Graph()
+    gr = nx.DiGraph()
     gr.add_edges_from(edges)
     
     labels_dict = {}
     for node in gr.nodes:
         labels_dict[node] = labels[node]
-    nx.draw(gr, node_size=500, labels=labels_dict, with_labels=True)
+    nx.draw(gr, node_size=500, labels=labels_dict, with_labels=True, connectionstyle='arc3, rad = 0.1')
     plt.show()
 
-mask = simulated_annealing(epochs=100000)
+
+toy_diffs = np.array([e[:] for e in pickle.load(open('diffs/diffs.pickle', 'rb'))[1][:]])
+
+mask = simulated_annealing(toy_diffs, epochs=50000, heuristic='mean')
 pickle.dump(mask, open('diffs/mask.pickle', 'wb+'))
-show_graph_with_labels(pickle.load(open('diffs/mask.pickle', 'rb')), pickle.load(open('diffs/diffs.pickle', 'rb'))[0])
+
+toy_mask = np.array([e[:] for e in pickle.load(open('diffs/mask.pickle', 'rb'))[:]])
+toy_labels = pickle.load(open('diffs/diffs.pickle', 'rb'))[0][:]
+
+eval_solution(toy_mask, toy_diffs, print_components=True)
+
+show_graph_with_labels(toy_mask, toy_labels)
