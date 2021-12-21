@@ -71,14 +71,14 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean', print_components=Fal
                         vals += adjacency_matrix[row_idx][col_idx][3] - 0.5
 
     for col_idx, col in enumerate(np.transpose(mask)):
-        parentness -= np.abs(len([row for row_idx, row in enumerate(col) if row == True and row_idx != col_idx]) - 1) / len(mask)
+        parentness -= np.abs(max(0, len([row for row_idx, row in enumerate(col) if row == True and row_idx != col_idx]) - 1)) / len(mask)
 
     for row_idx, row in enumerate(mask):
-        childness -= max(0, len([col for col_idx, col in enumerate(row) if col == True and col_idx != row_idx]) - 5) / len(mask)
+        childness -= max(0, len([col for col_idx, col in enumerate(row) if col == True and col_idx != row_idx]) - 3) / len(mask)
 
-    prunes = prunes / elems * 50
+    prunes = prunes / elems * 2
     vals = vals / elems * 1000
-    parentness = parentness
+    parentness = parentness * 4
     childness = childness
     
     if print_components:
@@ -99,11 +99,10 @@ def simulated_annealing(weights, epochs=1000, heuristic='mean'):
         next = state.copy()
         next_row = np.random.randint(0, len(weights))
         next_col = np.random.randint(0, len(weights))
-        # print(next_row, next_col)
         next[next_row, next_col] = not next[next_row, next_col]
 
         next_eval = eval_solution(next, weights, heuristic)
-        current_eval = eval_solution(state, weights, heuristic)
+        current_eval = eval_solution(state, weights, heuristic, print_components=True)
         evals += [current_eval]
         
         delta = next_eval - current_eval
@@ -138,14 +137,18 @@ def show_graph_with_labels(adjacency_matrix, labels):
     plt.show()
 
 
-toy_diffs = np.array([e[:] for e in pickle.load(open('diffs/diffs.pickle', 'rb'))[1][:]])
+labels = pickle.load(open('diffs/diffs.pickle', 'rb'))[0][:]
+diffs = np.array([e[:] for e in pickle.load(open('diffs/diffs.pickle', 'rb'))[1][:]])
+toy_labels = ['fruit', 'juice', 'orange juice', 'apple', 'banana']
+toy_label_indices = [labels.index(e) for e in toy_labels]
+toy_diffs = [diffs[e] for e in toy_label_indices]
+toy_diffs = [[row[e] for e in toy_label_indices] for row in toy_diffs]
 
-mask = simulated_annealing(toy_diffs, epochs=50000, heuristic='mean')
-pickle.dump(mask, open('diffs/mask.pickle', 'wb+'))
+toy_mask = simulated_annealing(toy_diffs, epochs=10000, heuristic='mean')
+pickle.dump(toy_mask, open('diffs/mask.pickle', 'wb+'))
 
 toy_mask = np.array([e[:] for e in pickle.load(open('diffs/mask.pickle', 'rb'))[:]])
-toy_labels = pickle.load(open('diffs/diffs.pickle', 'rb'))[0][:]
 
-eval_solution(toy_mask, toy_diffs, print_components=True)
 
+eval_solution(toy_mask, toy_diffs, print_components=True, heuristic='mean')
 show_graph_with_labels(toy_mask, toy_labels)
