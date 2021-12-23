@@ -11,7 +11,6 @@ import networkx as nx
 def diff(c1, c2):    
     diff = Conceptor().from_conceptor_matrix(c1.conceptor_matrix - c2.conceptor_matrix)
     evals = sorted(np.linalg.eigvals(diff.conceptor_matrix).real, reverse=True)
-    #print(evals)
     
     if len([e for e in evals if e != 0]) == 0:
         pos_ratio = 1
@@ -23,14 +22,14 @@ def diff(c1, c2):
     return [np.mean(evals), np.median(evals), pos_ratio, area_ratio]
 
 
-def load_all_conceptors(state_clouds_directory='./clouds'):
+def load_all_conceptors(state_clouds_directory='./subclouds'):
     concepts = {}
 
     for filename in os.listdir(state_clouds_directory):
         state_cloud = pickle.load(open(state_clouds_directory + '/' + filename, 'rb'))
         if isinstance(state_cloud, list) and len(state_cloud) > 768:
             print('(*) loading conceptor of:', filename)
-            concepts[filename.split('.')[0]] = Conceptor().from_states(state_cloud)
+            concepts[''.join(filename.split('.')[:-1])] = Conceptor().from_states(state_cloud)
 
     return concepts
 
@@ -76,9 +75,9 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean', print_components=Fal
     for row_idx, row in enumerate(mask):
         childness -= max(0, len([col for col_idx, col in enumerate(row) if col == True and col_idx != row_idx]) - 3) / len(mask)
 
-    prunes = prunes / elems * 2
-    vals = vals / elems * 1000
-    parentness = parentness * 4
+    prunes = prunes / elems * 10
+    vals = vals / elems * 100
+    parentness = parentness * 10
     childness = childness
     
     if print_components:
@@ -87,7 +86,7 @@ def eval_solution(mask, adjacency_matrix, heuristic='mean', print_components=Fal
     return prunes + vals + parentness + childness
 
 
-def simulated_annealing(weights, epochs=1000, heuristic='mean'):
+def simulated_annealing(weights, epochs=10000, heuristic='mean'):
     state = np.zeros((len(weights), len(weights)), dtype=bool)
     evals = []
 
@@ -102,7 +101,7 @@ def simulated_annealing(weights, epochs=1000, heuristic='mean'):
         next[next_row, next_col] = not next[next_row, next_col]
 
         next_eval = eval_solution(next, weights, heuristic)
-        current_eval = eval_solution(state, weights, heuristic, print_components=True)
+        current_eval = eval_solution(state, weights, heuristic)
         evals += [current_eval]
         
         delta = next_eval - current_eval
@@ -136,19 +135,23 @@ def show_graph_with_labels(adjacency_matrix, labels):
     nx.draw(gr, node_size=500, labels=labels_dict, with_labels=True, connectionstyle='arc3, rad = 0.1')
     plt.show()
 
+# diffs = compute_adjacency_matrix()
+# print(diffs)
+# pickle.dump(diffs, open('diffs/subcloud_diffs.pickle', 'wb+'))
 
-labels = pickle.load(open('diffs/diffs.pickle', 'rb'))[0][:]
-diffs = np.array([e[:] for e in pickle.load(open('diffs/diffs.pickle', 'rb'))[1][:]])
-toy_labels = ['fruit', 'juice', 'orange juice', 'apple', 'banana']
-toy_label_indices = [labels.index(e) for e in toy_labels]
-toy_diffs = [diffs[e] for e in toy_label_indices]
-toy_diffs = [[row[e] for e in toy_label_indices] for row in toy_diffs]
+labels = pickle.load(open('diffs/subcloud_diffs.pickle', 'rb'))[0][:]
+print(labels)
+diffs = np.array([e[:] for e in pickle.load(open('diffs/subcloud_diffs.pickle', 'rb'))[1][:]])
+# toy_labels = ['fruit', 'banana', 'apple', 'juice', 'orange juice']
+# toy_label_indices = [labels.index(e) for e in toy_labels]
+# toy_diffs = [diffs[e] for e in toy_label_indices]
+# toy_diffs = [[row[e] for e in toy_label_indices] for row in toy_diffs]
 
-toy_mask = simulated_annealing(toy_diffs, epochs=10000, heuristic='mean')
-pickle.dump(toy_mask, open('diffs/mask.pickle', 'wb+'))
+toy_mask = simulated_annealing(diffs, epochs=1000, heuristic='pos_ratio')
+pickle.dump(toy_mask, open('diffs/subcloud_mask.pickle', 'wb+'))
 
-toy_mask = np.array([e[:] for e in pickle.load(open('diffs/mask.pickle', 'rb'))[:]])
+toy_mask = np.array([e[:] for e in pickle.load(open('diffs/subcloud_mask.pickle', 'rb'))[:]])
 
 
-eval_solution(toy_mask, toy_diffs, print_components=True, heuristic='mean')
-show_graph_with_labels(toy_mask, toy_labels)
+eval_solution(toy_mask, diffs, print_components=True, heuristic='pos_ratio')
+show_graph_with_labels(toy_mask, labels)

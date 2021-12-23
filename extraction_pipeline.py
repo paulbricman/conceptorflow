@@ -7,6 +7,9 @@ import numpy as np
 import pickle
 import os
 from conceptors import Conceptor
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
 
 
 def generate_conceptors(state_clouds_directory='./clouds', conceptor_directory='./conceptors'):
@@ -100,4 +103,19 @@ def get_sublist_idx(x, y):
             return i
 
 
-generate_conceptors()
+def generate_subclouds(concepts=['fruit', 'banana', 'apple', 'juice', 'orange juice'], clusters=[2, 1, 4, 2, 1]):
+    for concept_idx, concept in enumerate(concepts):
+        cloud = pickle.load(open('clouds/' + concept + '.pickle', 'rb'))
+        cloud_pca = PCA(2).fit_transform(cloud)
+        if clusters[concept_idx] != 1:
+            clustering = KMeans(clusters[concept_idx]).fit_predict(cloud)
+        else:
+            clustering = [0 for e in cloud]
+        # plt.scatter([e[0] for e in cloud_pca], [e[1] for e in cloud_pca], c=clustering)
+        # plt.show()
+        for cluster in range(clusters[concept_idx]):
+            subcloud = [e for e_idx, e in enumerate(cloud) if clustering[e_idx] == cluster]
+            pickle.dump(subcloud, open('subclouds/' + concept + '.' + str(cluster) + '.pickle', 'wb'))
+
+
+generate_subclouds()
