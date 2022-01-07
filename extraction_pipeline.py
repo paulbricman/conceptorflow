@@ -31,8 +31,9 @@ def generate_state_clouds(keywords):
     for keyword in keywords:
         print('\n\n(*) Extracting state cloud of:', keyword)
         sentences = get_sentences(keyword, dataset)
-        embeddings = get_embeddings(keyword, sentences, tokenizer, model)
-        pickle.dump(embeddings, open('./clouds/' + keyword + '.pickle', 'wb+'))
+        final_sentences, embeddings = get_embeddings(keyword, sentences, tokenizer, model)
+        pickle.dump(dict(zip(final_sentences, embeddings)), open('./clouds/_' + keyword + '.pickle', 'wb+'))
+        # pickle.dump(embeddings, open('./clouds/' + keyword + '.pickle', 'wb+'))
 
 
 def get_sentences(keyword, dataset, context_size=300):
@@ -67,6 +68,7 @@ def get_sentences(keyword, dataset, context_size=300):
 def get_embeddings(keyword, sentences, tokenizer, model):
     encoded_keyword = tokenizer(keyword, padding=True, truncation=True, return_tensors='pt')['input_ids'][0][1:-1]
     embeddings = []
+    final_sentences = []
 
     for e in sentences:
         encoded_sentence = tokenizer(e, padding=True, truncation=True, return_tensors='pt')
@@ -76,11 +78,12 @@ def get_embeddings(keyword, sentences, tokenizer, model):
                 end_keyword = start_keyword + len(encoded_keyword)
                 with torch.no_grad():
                     model_output = model(encoded_sentence['input_ids'])
+                    final_sentences += [e]
                     embeddings += [np.mean(model_output[0][0][start_keyword:end_keyword].numpy(), axis=0)]
 
     print('(*)', len(embeddings), 'embeddings extracted')
         
-    return embeddings
+    return final_sentences, embeddings
     
 
 def is_sublist(ls1, ls2):
@@ -118,4 +121,14 @@ def generate_subclouds(concepts=['fruit', 'banana', 'apple', 'juice', 'orange ju
             pickle.dump(subcloud, open('subclouds/' + concept + '.' + str(cluster) + '.pickle', 'wb'))
 
 
-generate_subclouds()
+def cluster_samples(path, n_centroids=3):
+    samples = pickle.load(open(path, 'rb'))
+    kmeans = KMeans(n_centroids).fit(list(samples.values()))
+
+    labels = kmeans.labels_
+    for label in range(n_centroids):
+        for sample_idx, sample in enumerate(list(samples.keys())):
+            if label == labels[sample_idx]:
+                print(label, sample)
+
+        input()
