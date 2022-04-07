@@ -1,0 +1,38 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage{bachelorproject}
+
+\title{\vspace{-0.5in}{\bfseries\scshape 
+    Nested State Clouds: Distilling Knowledge Graphs from Contextual Embeddings
+    } \\ 
+    \vspace{1ex} 
+    \normalsize{Bachelor's Project Thesis}\vspace{-2ex}
+}
+
+\author{
+    \normalsize{Paul Bricman, s3908194, p.a.bricman@student.rug.nl,} \\ 
+    \normalsize{Supervisors: Prof. Dr. Herbert Jaeger}
+}
+
+\date{\vspace{-5ex}}
+
+
+\begin{document}
+
+\twocolumn[
+  \maketitle
+  \begin{@twocolumnfalse}
+    \input{./tex/abstract.tex}
+  \end{@twocolumnfalse}
+]
+
+\thispagestyle{firststyle}
+
+\input{tex/introduction.tex}
+\input{tex/methods.tex}
+\input{tex/results.tex}
+\input{tex/discussion.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{literature}
+
+\end{document}

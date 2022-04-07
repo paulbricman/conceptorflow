@@ -1,0 +1,86 @@
+\section{Methods}\label{sec:methods}
+
+\subsection{Model}
+
+As the object of our interpretation technique, we chose a pretrained BERT model, due to its widespread use in industry applications and its large number of derivative models (e.g. RoBERTa, ALBERT, distilBERT, etc.). BERT takes in a sequence of subword tokens as input and reconstructs it as output, while generating a unique contextual embedding for each token. Crucially, the same token can be attributed different embeddings in different contexts (e.g. "she" referring to different people). In practice, the contextual embeddings of individual tokens are mean-pooled together to yield an overarching document embedding which enables information retrieval. However, here we focus only on the contextual embeddings of individual tokens or at most short sequences of them which form a noun phrase (e.g. "orange juice").
+
+\subsection{Data}
+
+As NSC requires an auxiliary dataset for generating state clouds of contextual embeddings, we employ one of the datasets which have been used for training the BERT model, namely BookCorpus. This dataset consists of a variety of public domain books across different genres, and provides many different contexts for tokens to appear in.
+
+We focus our investigation on relating a set of 100 hand-picked concepts to each other. For each concept, we extract all contexts in which they appear verbatim in the dataset. A context is defined as the span of text starting 300 characters before and ending 300 characters after the concept occurence. Additionally, we trim the incomplete beginning and ending sentences (i.e. trailing) from each context, leaving in only complete sentences surrounding the concept occurence.
+
+For each context, we extract the contextual embedding of the concept occurence, obtaining a set of such embeddings for each concept. The cardinality of each set depends on the frequency of occurence of the concept in the dataset. We further filter our set of concepts based on the size of the set of contextual embeddings, eliminating concepts which had fewer occurences than the number of BERT embedding dimensions (i.e. 768). We cover difficulties in handling such noisy state clouds in the discussion.
+
+\subsection{Conceptors}
+
+From each remaining state cloud representing the set of concept nuances used in the dataset, we derived a conceptor based on the closed-form equation introduced in previous work. Each conceptor is represented through a square matrix whose dimensions match the dimensionality of BERT embeddings (i.e. 768), representing the PCA-like directions spanned by the state cloud, yet mediated by an additional aperture parameter. Additionally, we note that for rich state clouds based on relatively frequent concepts (e.g. "water"), the conceptor representation resulted in three orders-of-magnitude smaller memory footprint compared to storing the original set of contextual embeddings.
+
+\begin{align*}
+    C(R, \alpha) = R (R + \alpha^{-2} I)^{-1}
+\end{align*}
+
+\subsection{Abstraction Ordering}
+
+For each pair of conceptors learned from state clouds, we estimate their relation of abstraction based on a heuristic. First, we substract one conceptor matrix from the other. Second, we compute the mean of the eigenvalues the difference matrix. Intuitively, all eigenvalues of the difference matrix are positive if the first conceptor spatially engulfs the other, having higher spread than the second across all dimensions. Conversely, all such eigenvalues are negative if the first conceptor is completely contained by the second across all dimensions. Inevitably, however, the two conceptors will exhibit one such relation across \textit{some} of the 768 dimensions, while simultaneously exhibiting the opposite in other dimensions. Hence, we average the eigenvalues in an attempt to reach a "consensus" opinion on how the two conceptors are related to each other.
+
+\begin{align*}
+    f(C_1, C_2) = \frac{1}{n} \sum\limits_{i=1}^n \lambda_i(C_1 - C_2)
+\end{align*}
+
+\subsection{Graph Search}
+
+Given the pairwise estimates of abstraction ordering computed before, we conduct a graph search. We specifically note that we search \textit{for} a graph in the space of possible graphs, rather than searching for a path through a given graph. All candidate graphs considered are directed acyclic graphs (DAG), while nodes are identified with concepts, and arcs indicate meronymous relations of abstraction.
+
+We attempt to solve the graph search task through the local search algorithm of simulated annealing. As an initial candidate, we start with a completely disconnected graph, where no concepts are related to each other. This is represented through an adjacency matrix full of null values. Then, we randomly sample a new proposal by randomly mutating the current graph -- removing a previous arc or adding a new one. The acceptance probability is informed by a temperature schedule which linearly decreases from one to zero over the course of the search process, encouraging heavy exploration in the first epochs while conducting using an increasingly conservative strategy towards the end.
+
+The objective function which the search algorithm attempts to maximize is a linear combination of the following:
+
+\begin{itemize}
+    \item the number of arcs
+    \item the number of parents per node
+    \item the number of children per node
+    \item the sum of abstraction estimates included in the candidate graph via arcs
+\end{itemize}
+
+\begin{align*}
+    score(D, A) = \\
+        \frac{1}{n^2} \sum_{i=1}^{n} \sum_{j=1}^{n} (\alpha D_{ij} - \beta A_{ij}) \\
+    - \gamma \frac{1}{n} \sum_{i=1}^{n} \left|(\sum_{j=1}^{n}A_{ij}) - children\right| \\
+    - \delta \frac{1}{n} \sum_{j=1}^{n} \left|(\sum_{i=1}^{n}A_{ij}) - parents\right|
+\end{align*}
+
+\begin{algorithm}[!tbp] 
+    \caption{Graph Search in NSC}
+    \label{alg:gs}
+    \begin{algorithmic}
+        \STATE $s \Leftarrow 0 $ (fully-disconnected graph) \\
+        \FOR{$k = 0$ to $epochs$}
+        \STATE $T \Leftarrow 1 - \frac{k}{epochs}$ \\
+        \STATE $s_{new} \Leftarrow neighbor(s)$ \\
+        \IF{$P(score(D, s), score(D, s_{new}), T) \geq random(0, 1)$}
+            \STATE $s \Leftarrow s_{new}$
+        \ENDIF
+        \ENDFOR
+    \end{algorithmic}
+\end{algorithm}
+
+The result of the graph search is the final output of NSC: a graph which indicates how the underlying ML model relates concepts by means of contextual embeddings.
+
+\begin{algorithm}[!tbp] 
+    \caption{Nested State Clouds}
+    \label{alg:gs}
+    \begin{algorithmic}
+        \FOR{$s$ in $symbols$}
+            \STATE $a \Leftarrow contexts(s)$ \\
+            \STATE $b \Leftarrow cloud(a)$ \\
+            \STATE $c \Leftarrow conceptor(b)$ \\
+        \ENDFOR
+        \FOR{$i, c_i$ in $conceptors$}
+            \FOR{$j, c_j$ in $conceptors$}
+                \STATE $D_{ij} \Leftarrow f(c_i, c_j)$
+            \ENDFOR
+        \ENDFOR
+        \STATE $s_{output} \Leftarrow graph\_search(D)$
+    \end{algorithmic}
+\end{algorithm}
