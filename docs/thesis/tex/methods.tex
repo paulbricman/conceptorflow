@@ -10,7 +10,7 @@ As NSC requires an auxiliary dataset for generating state clouds of contextual e
 
 We focus our investigation on relating a set of 100 hand-picked concepts to each other. For each concept, we extract all contexts in which they appear verbatim in the dataset. A context is defined as the span of text starting 300 characters before and ending 300 characters after the concept occurence. Additionally, we trim the incomplete beginning and ending sentences (i.e. trailing) from each context, leaving in only complete sentences surrounding the concept occurence.
 
-For each context, we extract the contextual embedding of the concept occurence, obtaining a set of such embeddings for each concept. The cardinality of each set depends on the frequency of occurence of the concept in the dataset. We further filter our set of concepts based on the size of the set of contextual embeddings, eliminating concepts which had fewer occurences than the number of BERT embedding dimensions (i.e. 768). We cover difficulties in handling such noisy state clouds in the discussion.
+For each context, we extract the contextual embedding of the concept occurence, obtaining a set of such embeddings for each concept. The cardinality of each set depends on the frequency of occurence of the concept in the dataset. We further filter our set of concepts based on the size of the set of contextual embeddings, eliminating concepts which had fewer occurences than the number of BERT embedding dimensions (i.e. 768). We cover difficulties in handling sparser state clouds in the discussion.
 
 \subsection{Conceptors}
 
@@ -22,25 +22,27 @@ From each remaining state cloud representing the set of concept nuances used in 
 
 \subsection{Abstraction Ordering}
 
-For each pair of conceptors learned from state clouds, we estimate their relation of abstraction based on a heuristic. First, we substract one conceptor matrix from the other. Second, we compute the mean of the eigenvalues the difference matrix. Intuitively, all eigenvalues of the difference matrix are positive if the first conceptor spatially engulfs the other, having higher spread than the second across all dimensions. Conversely, all such eigenvalues are negative if the first conceptor is completely contained by the second across all dimensions. Inevitably, however, the two conceptors will exhibit one such relation across \textit{some} of the 768 dimensions, while simultaneously exhibiting the opposite in other dimensions. Hence, we average the eigenvalues in an attempt to reach a "consensus" opinion on how the two conceptors are related to each other.
+For each pair of conceptors learned from state clouds, we estimate their relation of abstraction based on a heuristic. First, we substract one conceptor matrix from the other. Second, we compute the mean of the eigenvalues the difference matrix. Intuitively, all eigenvalues of the difference matrix are positive if the first conceptor spatially engulfs the other, having higher spread than the second across all dimensions. Conversely, all such eigenvalues are negative if the first conceptor is completely contained by the second across all dimensions. Inevitably, however, the two conceptors will exhibit one such relation across \textit{some} of the 768 dimensions, while simultaneously exhibiting the opposite in other dimensions. Hence, we average the eigenvalues in an attempt to reach a "consensus" opinion on how the two conceptors are related to each other:
 
 \begin{align*}
     f(C_1, C_2) = \frac{1}{n} \sum\limits_{i=1}^n \lambda_i(C_1 - C_2)
 \end{align*}
 
+Where $C_1$ and $C_2$ are conceptor matrices, and \textit{n} is the number of dimensions in the difference matrix.
+
 \subsection{Graph Search}
 
-Given the pairwise estimates of abstraction ordering computed before, we conduct a graph search. We specifically note that we search \textit{for} a graph in the space of possible graphs, rather than searching for a path through a given graph. All candidate graphs considered are directed acyclic graphs (DAG), while nodes are identified with concepts, and arcs indicate meronymous relations of abstraction.
+Given the pairwise estimates of abstraction ordering computed before, we conduct a graph search. We specifically note that we search \textit{for} a graph in the space of possible graphs, rather than searching for a path through a given graph. All candidate graphs considered are directed ones, while nodes are identified with concepts, and arcs indicate meronymous relations of abstraction (i.e. IS\_A).
 
-We attempt to solve the graph search task through the local search algorithm of simulated annealing. As an initial candidate, we start with a completely disconnected graph, where no concepts are related to each other. This is represented through an adjacency matrix full of null values. Then, we randomly sample a new proposal by randomly mutating the current graph -- removing a previous arc or adding a new one. The acceptance probability is informed by a temperature schedule which linearly decreases from one to zero over the course of the search process, encouraging heavy exploration in the first epochs while conducting using an increasingly conservative strategy towards the end.
+We attempt to solve the graph search task through the local search algorithm of simulated annealing. As an initial candidate, we start with a completely disconnected graph, where no concepts are related to each other. This is represented through an adjacency matrix full of null values. Then, we randomly sample a new proposal by randomly mutating the current graph -- removing a previous arc or adding a new one. The acceptance probability is informed by a temperature schedule which linearly decreases from one to zero over the course of the search process, encouraging heavy exploration in the first epochs while using an increasingly conservative strategy towards the end.
 
 The objective function which the search algorithm attempts to maximize is a linear combination of the following:
 
 \begin{itemize}
-    \item the number of arcs
-    \item the number of parents per node
-    \item the number of children per node
     \item the sum of abstraction estimates included in the candidate graph via arcs
+    \item the number of arcs
+    \item the number of children per node
+    \item the number of parents per node
 \end{itemize}
 
 \begin{align*}
@@ -49,6 +51,8 @@ The objective function which the search algorithm attempts to maximize is a line
     - \gamma \frac{1}{n} \sum_{i=1}^{n} \left|(\sum_{j=1}^{n}A_{ij}) - children\right| \\
     - \delta \frac{1}{n} \sum_{j=1}^{n} \left|(\sum_{i=1}^{n}A_{ij}) - parents\right|
 \end{align*}
+
+Where \textit{A} is the adjacency matrix, \textit{D} is the difference matrix, \textit{n} is the number of dimensions in the difference matrix, and $\alpha, \beta, \gamma, \delta$ are weights for different components of the linear combination. Additionally, \textit{children} and \textit{parents} are the ideal number of children and parents of each node in the graph.
 
 \begin{algorithm}[!tbp] 
     \caption{Graph Search in NSC}
