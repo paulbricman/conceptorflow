@@ -2,7 +2,11 @@
 
 \subsection{Model}
 
-As the object of our interpretation technique, we chose a pretrained BERT model, due to its widespread use in industry applications and its large number of derivative models (e.g. RoBERTa, ALBERT, distilBERT, etc.). BERT takes in a sequence of subword tokens as input and reconstructs it as output, while generating a unique contextual embedding for each token. Crucially, the same token can be attributed different embeddings in different contexts (e.g. "she" referring to different people). In practice, the contextual embeddings of individual tokens are mean-pooled together to yield an overarching document embedding which enables information retrieval. However, here we focus only on the contextual embeddings of individual tokens or at most short sequences of them which form a noun phrase (e.g. "orange juice").
+\textbf{As the object of our interpretation technique, we chose a pretrained BERT model, short for Bidirectional Encoder Representations from Transformers. For completeness, BERT is a transformer model which maps a set of subword tokens to another set of such tokens. BERT has been originally trained on two different natural language processing objectives. First, it has been tasked with a masked language modeling (MLM) objective. This refers to the task of reconstructing a short input text which has been intentionally corrupted. The corruption typically consists in eliminating (i.e. masking) a random proportion of the tokens contained in the input text (e.g. "BERT is a transformer model." might be corrupted as "BERT is a [MASK] model."). Given this, the MLM task consists in reconstructing the pre-corruption text from the corrupted version.}
+
+\textbf{The second objective employed in training BERT is a next sentence prediction (NSP) task. Given a pair of two sentences, BERT is tasked with predicting whether they are consecutive in the original text. The combination of those two conceptually simple objectives has been shown to help BERT learn rich semantic representations of the text being processed, as an instrumental goal in solving the two tasks. For instance, mean-pooling token embeddings across texts has been shown to be highly effective in downstream information retrieval tasks based on vector similarity. Moreover, mean-pooling token embeddings of a text and comparing the result with the mean-pooled embeddings of a set of labels (e.g. science, politics, economics), has been shown to be a competitive baseline in text classification. Alternatively, BERT models fine-tuned on limited data from other tasks (e.g. natural language inference) had yielded state-of-the-art performance in multiple tasks.}
+
+We opted for BERT due to its widespread use in industry applications and its large number of derivative models (e.g. RoBERTa, ALBERT, distilBERT, etc.). BERT takes in a sequence of subword tokens as input and reconstructs it as output, while generating a unique contextual embedding for each token. Crucially, the same token can be attributed different embeddings in different contexts (e.g. "she" referring to different people). In practice, the contextual embeddings of individual tokens are mean-pooled together to yield an overarching document embedding. However, here we focus only on the contextual embeddings of individual tokens or at most short sequences of them which form a noun phrase (e.g. "orange juice").
 
 \subsection{Data}
 
@@ -30,13 +34,13 @@ For each pair of conceptors learned from state clouds, we estimate their relatio
 
 Where $C_1$ and $C_2$ are conceptor matrices, and \textit{n} is the number of dimensions in the difference matrix.
 
-\subsection{Graph Search}
+\subsection{Graph Optimization}
 
-Given the pairwise estimates of abstraction ordering computed before, we conduct a graph search. We specifically note that we search \textit{for} a graph in the space of possible graphs, rather than searching for a path through a given graph. All candidate graphs considered are directed ones, while nodes are identified with concepts, and arcs indicate meronymous relations of abstraction (i.e. IS\_A).
+Given the pairwise estimates of abstraction ordering computed before, we conduct a graph optimization process. All candidate graphs considered are directed ones, while nodes are identified with concepts, and arcs indicate meronymous relations of abstraction (i.e. IS\_A).
 
-We attempt to solve the graph search task through the local search algorithm of simulated annealing. As an initial candidate, we start with a completely disconnected graph, where no concepts are related to each other. This is represented through an adjacency matrix full of null values. Then, we randomly sample a new proposal by randomly mutating the current graph -- removing a previous arc or adding a new one. The acceptance probability is informed by a temperature schedule which linearly decreases from one to zero over the course of the search process, encouraging heavy exploration in the first epochs while using an increasingly conservative strategy towards the end.
+We attempt to solve the graph optimization task through the local search algorithm of simulated annealing (see \ref{alg:gs}). \textbf{Each candidate graph is represented through a Boolean adjacency matrix $A$. Specifically, $A^k$ denotes the adjacency matrix of the candidate graph considered at step $k$ of the graph optimization process. $A^k_{ij}$ is a Boolean value indicating whether concept $i$ links to concept $j$ in the associated candidate graph of step $k$.} As an initial candidate graph, the optimization process starts with a fully-disconnected graph, where no concepts are related to each other. This is represented through an adjacency matrix full of null values, $A^0 = 0$. Then, we randomly sample a new graph proposal by randomly mutating the current graph -- removing a previous arc or adding a new one. The acceptance probability is informed by a temperature schedule which linearly decreases from one to zero over the course of the search process, encouraging heavy exploration in the first epochs while using an increasingly conservative strategy towards the end.
 
-\textbf{The objective function which the search algorithm attempts to maximize is a linear combination of four different terms. Each term is a function of either or both (1) the adjacency matrix $A^i$ which is identified with the state of the graph optimization process in step $i$, and (2) the matrix $D$ containing pairwise estimates of abstract ordering. $D_{ij}$ denotes the numerical estimate of abstraction between conceptor $i$ and $j$. We note that the particular way $D_{ij}$ is related to $D_{ji}$ is determined by the choice numerical heuristic employed for abstraction ordering. In our case (i.e. mean of eigenvalues of difference matrix), $D_{ij} = -D_{ji}$, yet this is not necessarily the case when opting for other heuristics, as explored in the discussion (e.g. positive-negative eigenvalues ratio). Besides the two matrices just described which influence the objective function through the four terms whose description follows, the objective function is also influenced by the four coefficients which are used to weigh the four terms.}
+\textbf{The objective function which the search algorithm attempts to maximize is a linear combination of four different terms. Each term is a function of either or both (1) the adjacency matrix $A^i$ which is identified with the state of the graph optimization process in step $i$, and (2) the matrix $D$ containing pairwise estimates of abstract ordering. $D_{ij}$ denotes the numerical estimate of abstraction between conceptor $i$ and $j$. In other words, $$D_{ij} = f(C_i, C_j)$$. We note that the particular way $D_{ij}$ is related to $D_{ji}$ is determined by the choice numerical heuristic employed for abstraction ordering. In our case (i.e. mean of eigenvalues of difference matrix), $D_{ij} = -D_{ji}$, yet this is not necessarily the case when opting for other heuristics, as explored in the discussion (e.g. positive-negative eigenvalues ratio). Besides the two matrices just described which influence the objective function through the four terms whose description follows, the objective function is also influenced by the four coefficients which are used to weigh the four terms.}
 
 \textbf{The first term is a function of both $A^i$ and $D$. It is equal to the mean of the abstraction ordering estimates represented in the candidate graph by means of arcs. From now on, we refer to this term as \textit{expressed abstraction} (EA). In case of a fully-disconnected graph (i.e. one in which no arc exists in the graph at all) represented by $A^i = 0$, $EA(A^i, D) = 0$. In contrast, in case of a fully-connected graph (i.e. one in which there exists an arc between any two nodes) represented by $A^i = 1$, $$EA(A^i, D) = \frac{1}{n^2} \sum_{i=1}^{n} \sum_{j=1}^{n} A_{ij} D_{ij}.$$ In general, $min(D) \leq EA(A^i, D) \leq max(D)$. This is the only among the four terms of the linear combination which indicates functional-groundedness, as it reflects the proportion of the abstraction identified in high-dimensional space which gets represented in the output knowledge graph.}
 
@@ -46,21 +50,16 @@ We attempt to solve the graph search task through the local search algorithm of 
 
 \textbf{The fourth and final term of the objective function is extremely similar to the previous one, yet it addresses the distribution of parent counts, rather than children counts. Concretely, it is equal to the mean difference between a node's parent count (i.e. number of nodes connected via inbound arcs) and a target parent count set in advance: $$PE(A^i) = \frac{1}{n} \sum_{j=1}^{n} \left|(\sum_{i=1}^{n}A_{ij}) - target\_parents\right|.$$ We refer to this term as \textit{parent error} (PE). In case of a graph with adjacency matrix $A^i$ in which every node only has parents equal in count to $target\_parents$, $PE(A^i)=0$. For all other graphs, $PE(A^i) > 0$.}
 
-\begin{itemize}
-    \item the sum of abstraction estimates included in the candidate graph via arcs
-    \item the number of arcs
-    \item the number of children per node
-    \item the number of parents per node
-\end{itemize}
+\textbf{Besides the four terms which are functions of either or both $A^i$ and $D$, the objective function also contain four coefficients meant to influence the relative weight of each term. We denote these as $\alpha, \beta, \gamma$, and $\delta$ in order for the four terms. Given the four terms, the two additional targets for child and parent count, and the four weighing coefficients included in the linear combination, the objective function can finally be defined as:}
+
 
 \begin{align*}
-    score(D, A) = \\
-        \frac{1}{n^2} \sum_{i=1}^{n} \sum_{j=1}^{n} (\alpha D_{ij} - \beta A_{ij}) \\
-    - \gamma \frac{1}{n} \sum_{i=1}^{n} \left|(\sum_{j=1}^{n}A_{ij}) - children\right| \\
-    - \delta \frac{1}{n} \sum_{j=1}^{n} \left|(\sum_{i=1}^{n}A_{ij}) - parents\right|
+    & score(A^i, D, target\_children, target\_parents) = \\
+    & \alpha EA(A^i, D) \\
+    & - \beta AD(A^i) \\
+    & - \gamma CE(A^i, target\_children) \\
+    & - \delta PE(A^i, target\_parents).
 \end{align*}
-
-Where \textit{A} is the adjacency matrix, \textit{D} is the difference matrix, \textit{n} is the number of dimensions in the difference matrix, and $\alpha, \beta, \gamma, \delta$ are weights for different components of the linear combination. Additionally, \textit{children} and \textit{parents} are the ideal number of children and parents of each node in the graph.
 
 \begin{algorithm}[!tbp] 
     \caption{Graph Search in NSC}
