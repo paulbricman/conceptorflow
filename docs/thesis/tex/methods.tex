@@ -58,7 +58,6 @@ We attempt to solve the graph optimization task through the local search algorit
 
 \textbf{Besides the four terms which are functions of either or both $A^i$ and $D$, the objective function also contain four coefficients meant to influence the relative weight of each term. We denote these as $\alpha, \beta, \gamma$, and $\delta$ in order for the four terms. Given the four terms, the two additional targets for child and parent count, and the four weighing coefficients included in the linear combination, the objective function can finally be defined as:}
 
-
 \begin{align*}
     & score(A^i, D, target\_children, target\_parents) = \\
     & \alpha EA(A^i, D) \\
@@ -101,3 +100,5 @@ The result of the graph search is the final output of NSC: a graph which indicat
         \STATE $s_{output} \Leftarrow graph\_search(D)$
     \end{algorithmic}
 \end{algorithm}
+
+\textbf{In the context of the present work, we have manually specified values for the four coefficients of the linear combination which comprises the graph optimization objective, $\alpha, \beta, \gamma$, and $\delta$. Besides those, we have also manually specified values for the two hyperparameters related to local graph structure, $target\_children$ and $target\_parents$. However, a more robust approach to specifying the values of those six hyperparameters would be to conduct a hyperparameter search. Concretely, one might resort to searching for appropriate values for those six hyperparameters -- in addition to the number of graph optimization epochs, the temperature schedule, and the conceptor aperture -- which successfully recover some presupposed relations of abstraction between the concepts being related by means of the resulting knowledge graph. We leave that for future work and expand on the possibility in the discussion.}
