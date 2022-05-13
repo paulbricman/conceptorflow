@@ -35,7 +35,7 @@ Upon inspecting low-dimensional state cloud projections, we observed the presenc
     \end{tabular}
 \end{table}
 
-This diversity of meanings assumed by the same symbol across the text corpus casts doubt on our assumption of there being a one-to-one correspondence between symbols and graph nodes. An intermediate clustering step might be effective in decoupling different word senses and producing different state clouds, though the issue of how many senses are there per symbol is non-trivial. Similar to how words themselves appear to discretely quantize the otherwise continuous semantic space, finite word senses as "subsymbols" run into similar trade-offs between sparsity and accuracy.
+This diversity of meanings assumed by the same symbol across the text corpus casts doubt on our assumption of there being a one-to-one correspondence between symbols and graph nodes. An intermediate clustering step might be effective in decoupling different word senses and producing different state clouds, though the issue of how many senses are there per symbol is non-trivial. Similar to how words themselves appear to discretely quantize the otherwise continuous semantic space, finite word senses as "subsymbols" run into similar trade-offs between sparsity and accuracy. While we did try solving this polysemy challenge by K-means clustering with arbitrary values for $K$, the output graph quality degraded significantly, suggesting the difficulty in disentangling the different senses with this naive approach.
 
 \subsubsection{State clouds are non-linear.}
 
