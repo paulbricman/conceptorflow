@@ -59,22 +59,6 @@ The central role of state clouds in NSC means that the technique is highly depen
 
 \textbf{One might be tempted to simply aim for large datasets in order to alleviate this concern. Unfortunately, the issue as hand is not that certain senses are not represented enough through exemplars in order for their meaning to be captured. Rather, it is specifically an issue of representativity in the resulting population of meanings. This has two implications, one concerning industry applications, and one concerning epistemics. The first is that, in practice, one would have to identify an auxiliary dataset which is representative enough of the concepts desired to be placed in the resulting knowledge graph. For instance, if one aims to investigate an DL model's internalized representations related to real estate matters, one concerning material science would be a poor choice of auxiliary dataset. The second implication hints at the fact that transparency tools like the ones used broadly in XAI can only meaningfully relate latent representations to the world models of people who authored the datasets. If one was to apply NSC on a book corpus, as we did, it would be unlikely for terms like "entity," "object", or "thing" to be organized in an ontology in the same way a logician might organize them.}
 
-\subsubsection{NSC output graph is heavily influenced by the graph search objective.}
-
-The graph search process employed to output a knowledge graph is highly sensitive to the search objective. Reaching a balance between the functional-grounded terms (e.g. faithfulness to detected abstraction ordering) and human-grounded terms (e.g. sparsity) is difficult to achieve manually. Often, one component of the linear combination tends dominates the others (see Fig. \ref{fig:children} and Fig. \ref{fig:pruning}). This balance is especially difficult to find with higher number of concepts, bringing the scalability of NSC into question. However, normalizing the objective's components based on the number of concepts being analyzed greatly improved robustness.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{img/too_much_pruning.png}
-\caption{NSC output graph after undervaluing children count per node constraints.}\label{fig:children}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{img/short_run.png}
-\caption{NSC output graph after undervaluing arc pruning.}\label{fig:pruning}
-\end{figure}
-
 \subsection{Future work}
 
 \subsubsection{Improved noise robustness}
