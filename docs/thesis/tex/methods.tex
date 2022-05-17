@@ -68,38 +68,45 @@ We attempt to solve the graph optimization task through the local search algorit
     & - \delta PE(A^i, target\_parents).
 \end{align*}
 
+The result of the graph search is the final output of NSC: a graph which indicates how the underlying DL model relates concepts by means of contextual embeddings. \textbf{The final graph optimization step of NSC which, builds heavily on simulated annealing, has been summarized in pseudocode in Algorithm \ref{alg:gs}. Additionally, the whole NSC pipeline has been condensed in Algorithm \ref{alg:nsc} in order to offer an overview of the entire technique.}
+
 \begin{algorithm}[!tbp] 
-    \caption{Graph Search in NSC}
+    \caption{Graph optimization in NSC}
     \label{alg:gs}
+    \hspace*{\algorithmicindent} \textbf{Input}: $D$ \\
+    \hspace*{\algorithmicindent} \textbf{Output}: $A^{opt}$
     \begin{algorithmic}
-        \STATE $s \Leftarrow 0 $ (fully-disconnected graph) \\
+        \STATE $A^0 \Leftarrow 0 $ (fully-disconnected graph) \\
         \FOR{$k = 0$ to $epochs$}
         \STATE $T \Leftarrow 1 - \frac{k}{epochs}$ \\
-        \STATE $s_{new} \Leftarrow neighbor(s)$ \\
-        \IF{$P(score(D, s), score(D, s_{new}), T) \geq random(0, 1)$}
-            \STATE $s \Leftarrow s_{new}$
+        \STATE $A^{k+1} \Leftarrow neighbor(A^k)$ (one-arc change) \\
+        \IF{$P_{acceptance}(score(D, A^k), score(D, A^{k+1}), T) \leq random(0, 1)$}
+            \STATE $ A^{k+1} \Leftarrow A^{k}$
         \ENDIF
         \ENDFOR
+        \STATE $A^{opt} \Leftarrow A^{epochs}$
     \end{algorithmic}
 \end{algorithm}
 
-The result of the graph search is the final output of NSC: a graph which indicates how the underlying DL model relates concepts by means of contextual embeddings.
-
 \begin{algorithm}[!tbp] 
     \caption{Nested State Clouds}
-    \label{alg:gs}
+    \label{alg:nsc}
+    \hspace*{\algorithmicindent} \textbf{Input}: $symbols$ \\
+    \hspace*{\algorithmicindent} \textbf{Output}: $A^{opt}$
     \begin{algorithmic}
+        \STATE $conceptors \Leftarrow \{\}$ \\
         \FOR{$s$ in $symbols$}
-            \STATE $a \Leftarrow contexts(s)$ \\
-            \STATE $b \Leftarrow cloud(a)$ \\
-            \STATE $c \Leftarrow conceptor(b)$ \\
+            \STATE $a \Leftarrow contexts(s)$ (list of contexts for exemplars) \\
+            \STATE $b \Leftarrow cloud(a)$ (list of contextual embeddings of exemplars) \\
+            \STATE $c \Leftarrow conceptor(b)$ (conceptor matrix obtained from state cloud)\\
+            \STATE $conceptors \Leftarrow conceptors \cup \{c\}$
         \ENDFOR
         \FOR{$i, c_i$ in $conceptors$}
             \FOR{$j, c_j$ in $conceptors$}
                 \STATE $D_{ij} \Leftarrow f(c_i, c_j)$
             \ENDFOR
         \ENDFOR
-        \STATE $s_{output} \Leftarrow graph\_search(D)$
+        \STATE $A^{opt} \Leftarrow graph\_optimization(D)$
     \end{algorithmic}
 \end{algorithm}
 
