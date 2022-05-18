@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex report"] 1652863680 "report.aux" "report.bbl" "report" 1652863683
+["bibtex report"] 1652864839 "report.aux" "report.bbl" "report" 1652864841
   "/usr/share/texlive/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
   "literature.bib" 1652863628 55956 b23e03afd22f89236d9a37d2ce5b960c ""
-  "report.aux" 1652863683 8442 6680105fc1b4f2da7a044cb1268414d9 "pdflatex"
+  "report.aux" 1652864841 9258 4580c5fb6765e3e73666b98721e686b7 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
-["pdflatex"] 1652863681 "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.tex" "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf" "report" 1652863683
+["pdflatex"] 1652864839 "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.tex" "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf" "report" 1652864841
   "./tex/abstract.tex" 1652175797 775 00d39e2c5ef2d402240cd66de4333b51 ""
   "/etc/texmf/web2c/texmf.cnf" 1631110711 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paulbricman/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-bold/cmbcsc10.1037pk" 1649336417 21776 4fffa6b6a25a91ec1b52b4ebfa8ec9a9 ""
-  "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.aux" 1652863683 8442 6680105fc1b4f2da7a044cb1268414d9 ""
+  "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.aux" 1652864841 9258 4580c5fb6765e3e73666b98721e686b7 ""
   "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.tex" 1649339969 781 62bc47aebcf1d1811752c434e2e163ce ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -137,17 +137,17 @@
   "img/spectrum.png" 1652366468 23834 ad360c0026555d10e2d85fb434e6ebed ""
   "img/too_much_pruning.png" 1649341434 388313 2e2d6cd941ceb7ad12254f3ac9ad255f ""
   "img/valuable contrasts.png" 1652366495 22498 c6412846311f609465ecda9e0c91563d ""
-  "report.aux" 1652863683 8442 6680105fc1b4f2da7a044cb1268414d9 "pdflatex"
-  "report.bbl" 1652863681 10104 460c22f84d4a5d36dffad155e743b6e3 "bibtex report"
+  "report.aux" 1652864841 9258 4580c5fb6765e3e73666b98721e686b7 "pdflatex"
+  "report.bbl" 1652864839 11871 9d100d9b616599a239757a3d9a2d8e27 "bibtex report"
   "report.tex" 1649339969 781 62bc47aebcf1d1811752c434e2e163ce ""
   "tex/abstract.tex" 1652175797 775 00d39e2c5ef2d402240cd66de4333b51 ""
-  "tex/discussion.tex" 1652434823 16547 2b6f1c53b7340a423cd1018f683d9577 ""
-  "tex/introduction.tex" 1652863675 11828 ef38587e3075c93bf940ee7f10aa5d5c ""
-  "tex/methods.tex" 1652861321 22272 38193837d154fd4837fde0a7b5d7e0d6 ""
-  "tex/results.tex" 1652434254 7371 c2210d7f0629614092c552e7620d7012 ""
+  "tex/discussion.tex" 1652864817 16917 cf69f5ab16f88f33587af06283acd8d5 ""
+  "tex/introduction.tex" 1652863946 11918 33d8a239d718f9f18b1b135ea96a608c ""
+  "tex/methods.tex" 1652864828 22543 7e463ce7808060561acdd927064d5075 ""
+  "tex/results.tex" 1652864818 7382 5b499d55e0530db7c0af04bc896add9e ""
   (generated)
-  "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf"
-  "report.pdf"
   "report.log"
   "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.log"
+  "report.pdf"
+  "/home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf"
   "report.aux"

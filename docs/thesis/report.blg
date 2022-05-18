@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+The style file: plainnat.bst
+Database file #1: literature.bib
+Warning--to sort, need author or key in noauthor_multimodal_nodate
+Warning--empty year in noauthor_multimodal_nodate
+Warning--empty journal in danilevsky_survey_nodate
+Warning--empty year in danilevsky_survey_nodate
+Warning--empty year in danilevsky_survey_nodate
+Warning--empty journal in devlin_bert_nodate
+Warning--empty year in devlin_bert_nodate
+Warning--empty year in devlin_bert_nodate
+Warning--empty journal in jaeger_using_nodate
+Warning--empty year in jaeger_using_nodate
+Warning--empty year in jaeger_using_nodate
+Warning--empty journal in jain_attention_nodate
+Warning--empty year in jain_attention_nodate
+Warning--empty year in jain_attention_nodate
+Warning--empty journal in radford_improving_nodate
+Warning--empty year in radford_improving_nodate
+Warning--empty year in radford_improving_nodate
+You've used 26 entries,
+            2773 wiz_defined-function locations,
+            758 strings with 12636 characters,
+and the built_in function-call counts, 17112 in all, are:
+= -- 1420
+> -- 1579
+< -- 14
++ -- 530
+- -- 504
+* -- 1602
+:= -- 2724
+add.period$ -- 119
+call.type$ -- 26
+change.case$ -- 246
+chr.to.int$ -- 26
+cite$ -- 70
+duplicate$ -- 544
+empty$ -- 953
+format.name$ -- 531
+if$ -- 3470
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 14
+newline$ -- 176
+num.names$ -- 100
+pop$ -- 536
+preamble$ -- 1
+purify$ -- 220
+quote$ -- 0
+skip$ -- 512
+stack$ -- 0
+substring$ -- 285
+swap$ -- 95
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 286
+warning$ -- 17
+while$ -- 97
+width$ -- 0
+write$ -- 404
+(There were 17 warnings)

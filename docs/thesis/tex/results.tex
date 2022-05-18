@@ -45,12 +45,12 @@ Additionally, we took note of the fact that the graph optimization process emplo
 \textbf{A similar failure mode manifested itself when undervaluing the impact of arc density on graph optimization (i.e. the term which nudges the optimization process towards graphs which are sparse, in that they contain a relatively low number of arcs connecting nodes). In this other case, the optimization process favored graphs which contain many arcs (Fig. \ref{fig:pruning}). We speculate that this happened because considering candidate graphs which contain many arcs translates to an increase in expressed abstraction. In other words, simply including arcs which connect concepts which seemingly have a positive relation of abstraction (i.e. the arc's origin node is the slightest more abstract than the arc's target node) yield increases in terms of the objective function. Without a comparable arc density penalty, the optimization process approaches graphs overpopulated by arcs.}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.45\textwidth]{img/short_run.png}
-\caption{NSC output graph after undervaluing arc pruning.}\label{fig:pruning}
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/short_run.png}
+    \caption{NSC output graph after undervaluing arc pruning.}\label{fig:pruning}
 \end{figure}
 
-\textbf{This sensitive balance between the competing terms which make up the objective function echoes a broader concern which permeates XAI. There is a constant trade-off between functional-groundedness and human-groundedness which resembles the adequacy-fluency trade-off frequent in machine translation. In our case, the expressed abstraction term incentivizes functional-groundedness, the adequate communication of high-dimensional relations among concepts. In contrast, the three legibility terms employed in the objective function incentivize human-groundedness, the communication of DL model representations in a manner which is cognitively ergonomic for humans. 
+\textbf{This sensitive balance between the competing terms which make up the objective function echoes a broader concern which permeates XAI. There is a constant trade-off between functional-groundedness and human-groundedness which resembles the adequacy-fluency trade-off frequent in machine translation. In our case, the expressed abstraction term incentivizes functional-groundedness, the adequate communication of high-dimensional relations among concepts. In contrast, the three legibility terms employed in the objective function incentivize human-groundedness, the communication of DL model representations in a manner which is cognitively ergonomic for humans.
 }
 
 \textbf{In our experiments, we find that striking this balance is especially difficult when trying to distill larger knowledge graphs containing more concepts from high-dimensional embeddings, bringing the scalability of NSC into question. That said, normalizing the objective's components relative to the total number of concepts being analyzed (i.e. all legibility terms assume values in $[0, 1]$ before weighting, regardless of node count) did improve scalability.}
