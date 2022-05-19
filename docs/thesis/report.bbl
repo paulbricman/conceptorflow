@@ -1,13 +1,9 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{28}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[noa()]{noauthor_multimodal_nodate}
-Multimodal {Neurons} in {Artificial} {Neural} {Networks}.
-\newblock URL \url{https://distill.pub/2021/multimodal-neurons/}.
 
 \bibitem[Arrieta et~al.(2019)Arrieta, Díaz-Rodríguez, Del~Ser, Bennetot,
   Tabik, Barbado, García, Gil-López, Molina, Benjamins, Chatila, and
@@ -88,12 +84,6 @@ Geoffrey Hinton.
 \newblock URL \url{http://arxiv.org/abs/2102.12627}.
 \newblock Number: arXiv:2102.12627 arXiv:2102.12627 [cs].
 
-\bibitem[Jaeger()]{jaeger_using_nodate}
-Herbert Jaeger.
-\newblock Using {Conceptors} to {Manage} {Neural} {Long}-{Term} {Memories} for
-  {Temporal} {Patterns}.
-\newblock page~43.
-
 \bibitem[Jaeger(2017)]{jaeger_controlling_2017}
 Herbert Jaeger.
 \newblock Controlling {Recurrent} {Neural} {Networks} by {Conceptors}, April
@@ -105,6 +95,17 @@ Herbert Jaeger.
 Sarthak Jain and Byron~C Wallace.
 \newblock Attention is not {Explanation}.
 \newblock page~14.
+
+\bibitem[Jiang and de~Marneffe(2019)]{jiang_evaluating_2019}
+Nanjiang Jiang and Marie-Catherine de~Marneffe.
+\newblock Evaluating {BERT} for natural language inference: {A} case study on
+  the {CommitmentBank}.
+\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, January 2019.
+\newblock \doi{10.18653/v1/D19-1630}.
+\newblock URL
+  \url{https://par.nsf.gov/biblio/10158557-evaluating-bert-natural-language-inference-case-study-commitmentbank}.
 
 \bibitem[Koehn(2017)]{koehn_neural_2017}
 Philipp Koehn.
@@ -195,6 +196,14 @@ Suman Ravuri, Karel Lenc, Matthew Willson, Dmitry Kangin, Remi Lam, Piotr
 \newblock URL \url{https://www.nature.com/articles/s41586-021-03854-z}.
 \newblock Number: 7878 Publisher: Nature Publishing Group.
 
+\bibitem[Reimers and Gurevych(2019)]{reimers_sentence-bert_2019}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-{BERT}: {Sentence} {Embeddings} using {Siamese}
+  {BERT}-{Networks}.
+\newblock Technical Report arXiv:1908.10084, arXiv, August 2019.
+\newblock URL \url{http://arxiv.org/abs/1908.10084}.
+\newblock arXiv:1908.10084 [cs] type: article.
+
 \bibitem[Sanh et~al.(2020)Sanh, Debut, Chaumond, and
   Wolf]{sanh_distilbert_2020}
 Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf.
@@ -242,5 +251,22 @@ Chenguang Wang, Xiao Liu, and Dawn Song.
 \newblock \emph{arXiv:2010.11967 [cs]}, October 2020.
 \newblock URL \url{http://arxiv.org/abs/2010.11967}.
 \newblock arXiv: 2010.11967.
+
+\bibitem[West et~al.(2021)West, Bhagavatula, Hessel, Hwang, Jiang, Bras, Lu,
+  Welleck, and Choi]{west_symbolic_2021}
+Peter West, Chandra Bhagavatula, Jack Hessel, Jena~D. Hwang, Liwei Jiang,
+  Ronan~Le Bras, Ximing Lu, Sean Welleck, and Yejin Choi.
+\newblock Symbolic {Knowledge} {Distillation}: from {General} {Language}
+  {Models} to {Commonsense} {Models}, October 2021.
+\newblock URL \url{http://arxiv.org/abs/2110.07178}.
+\newblock Number: arXiv:2110.07178 arXiv:2110.07178 [cs].
+
+\bibitem[Yin et~al.(2019)Yin, Hay, and Roth]{yin_benchmarking_2019}
+Wenpeng Yin, Jamaal Hay, and Dan Roth.
+\newblock Benchmarking {Zero}-shot {Text} {Classification}: {Datasets},
+  {Evaluation} and {Entailment} {Approach}.
+\newblock Technical Report arXiv:1909.00161, arXiv, August 2019.
+\newblock URL \url{http://arxiv.org/abs/1909.00161}.
+\newblock arXiv:1909.00161 [cs] type: article.
 
 \end{thebibliography}
