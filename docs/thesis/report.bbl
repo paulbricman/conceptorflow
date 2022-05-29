@@ -25,13 +25,13 @@ Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai.
 \newblock URL \url{http://arxiv.org/abs/1607.06520}.
 \newblock Number: arXiv:1607.06520 arXiv:1607.06520 [cs, stat].
 
-\bibitem[Danilevsky et~al.()Danilevsky, Qian, Aharonov, Katsis, Kawas, and
+\bibitem[Danilevsky et~al.(2020)Danilevsky, Qian, Aharonov, Katsis, Kawas, and
   Sen]{danilevsky_survey_nodate}
 Marina Danilevsky, Kun Qian, Ranit Aharonov, Yannis Katsis, Ban Kawas, and
   Prithviraj Sen.
 \newblock A {Survey} of the {State} of {Explainable} {AI} for {Natural}
   {Language} {Processing}.
-\newblock page~13.
+\newblock page~13, 2020.
 
 \bibitem[Degrave et~al.(2022)Degrave, Felici, Buchli, Neunert, Tracey,
   Carpanese, Ewalds, Hafner, Abdolmaleki, de~las Casas, Donner, Fritz,
@@ -159,12 +159,12 @@ Andreas Madsen, Siva Reddy, and Sarath Chandar.
 \newblock URL \url{http://arxiv.org/abs/2108.04840}.
 \newblock arXiv: 2108.04840.
 
-\bibitem[Radford et~al.()Radford, Narasimhan, Salimans, and
+\bibitem[Radford et~al.(2018)Radford, Narasimhan, Salimans, and
   Sutskever]{radford_improving_nodate}
 Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever.
 \newblock Improving {Language} {Understanding} by {Generative}
   {Pre}-{Training}.
-\newblock page~12.
+\newblock page~12, 2018.
 
 \bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
   Sastry, Askell, Mishkin, Clark, Krueger, and

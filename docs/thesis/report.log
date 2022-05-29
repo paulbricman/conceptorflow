@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.15)  19 MAY 2022 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.15)  29 MAY 2022 08:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -254,22 +254,129 @@ Package: abstract 2009/06/08 v1.2a configurable abstracts
 \absrightindent=\skip73
 \absparindent=\skip74
 \absparsep=\skip75
-) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip76
-\bibsep=\skip77
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count286
 ) (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count287
-\c@@ppsavesec=\count288
-\c@@ppsaveapp=\count289
+\c@@pps=\count286
+\c@@ppsavesec=\count287
+\c@@ppsaveapp=\count288
 ) (/usr/share/texlive/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip78
-\thanksmargin=\skip79
-\droptitle=\skip80
+\thanksmarkwidth=\skip76
+\thanksmargin=\skip77
+\droptitle=\skip78
+) (/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
+Package: apacite 2013/07/21 v6.03 APA citation
+\c@BibCnt=\count289
+\bibleftmargin=\skip79
+\bibindent=\skip80
+\bibparsep=\skip81
+\bibitemsep=\skip82
+\biblabelsep=\skip83
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip84
+\bibsep=\skip85
+LaTeX Info: Redefining \cite on input line 694.
+LaTeX Info: Redefining \citeauthor on input line 712.
+LaTeX Info: Redefining \citeyear on input line 735.
+\c@NAT@ctr=\count290
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+ (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen167
+\Hy@linkcounter=\count291
+\Hy@pagecounter=\count292
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count293
+\pdfmajorversion=\count294
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count295
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen168
+ (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count296
+\Field@Width=\dimen169
+\Fld@charsize=\dimen170
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+ (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count297
+\c@Item=\count298
+\c@Hfootnote=\count299
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+ (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count300
+\c@bookmark@seq@number=\count301
+ (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+ (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+)
+\Hy@SectionHShift=\skip86
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
@@ -281,30 +388,12 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen167
-\Gin@req@width=\dimen168
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
 Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
 Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -330,26 +419,53 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count290
-\scratchdimen=\dimen169
+\scratchcounter=\count302
+\scratchdimen=\dimen173
 \scratchbox=\box59
-\nofMPsegments=\count291
-\nofMParguments=\count292
+\nofMPsegments=\count303
+\nofMParguments=\count304
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count293
-\MPscratchDim=\dimen170
-\MPnumerator=\count294
-\makeMPintoPDFobject=\count295
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen174
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
 \everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
+\c@maskedRefs=\count308
+ (/usr/share/texlive/texmf-dist/tex/latex/apacite/english.apc
+File: english.apc 2013/07/21 v6.03 apacite language file
+LaTeX Info: Redefining \BPBI on input line 129.
+LaTeX Info: Redefining \BHBI on input line 130.
+)
+\AtBeginShipoutBox=\box60
+Package hyperref Info: Link coloring OFF on input line 19.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+ (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count309
+)
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
+ (/home/paulbricman/Projects/conceptorflow/docs/thesis/report.out) (/home/paulbricman/Projects/conceptorflow/docs/thesis/report.out)
+\@outlinefile=\write4
+\openout4 = `report.out'.
+
 LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -366,7 +482,7 @@ Underfull \vbox (badness 6078) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<./img/RUGR_FSE_logoEN_zwart_RGB.png, id=1, 331.9602pt x 50.1072pt>
+<./img/RUGR_FSE_logoEN_zwart_RGB.png, id=110, 331.9602pt x 50.1072pt>
 File: ./img/RUGR_FSE_logoEN_zwart_RGB.png Graphic file (type png)
 <use ./img/RUGR_FSE_logoEN_zwart_RGB.png>
 Package pdftex.def Info: ./img/RUGR_FSE_logoEN_zwart_RGB.png  used on input line 10.
@@ -386,71 +502,52 @@ Underfull \hbox (badness 2644) in paragraph at lines 11--12
 \OT1/cmr/m/n/10 than "pro-gram-mer" by a DL model), which
  []
 
-[2]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/methods.tex [3] [4]
-Underfull \hbox (badness 1194) in paragraph at lines 23--24
-\OT1/cmr/bx/n/10 From each re-main-ing state cloud rep-re-
- []
+[2]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/methods.tex [3]
+Underfull \vbox (badness 6859) has occurred while \output is active []
 
+ [4] [5]
+Underfull \vbox (badness 2698) has occurred while \output is active []
 
-Underfull \hbox (badness 1394) in paragraph at lines 31--32
-\OT1/cmr/m/n/10 10[]$ \OT1/cmr/bx/n/10 BERT em-bed-dings of di-men-sion-al-ity
- []
-
-[5]
-Underfull \hbox (badness 1052) in paragraph at lines 41--42
-\OT1/cmr/bx/n/10 and signal-to-noise ra-tio which are non-
- []
-
-[6]
-Underfull \hbox (badness 1642) in paragraph at lines 55--56
-[]\OT1/cmr/bx/n/10 In such case, $\OML/cmm/m/it/10 min\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 EA\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]; D\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
+ [6]
+Underfull \hbox (badness 2302) in paragraph at lines 55--56
+\OT1/cmr/m/n/10 lin-ear com-bi-na-tion which in-di-cates functional-
  []
 
 [7]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 78.
+
 Overfull \hbox (12.60655pt too wide) in paragraph at lines 87--87
 [] []\OT1/cmr/bx/n/10 if $\OML/cmm/m/it/10 P[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 score\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D; A[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; score\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 D; A[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; T\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T
  []
 
 ) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/results.tex [8]
-<img/distinct graphs.png, id=46, 462.528pt x 346.896pt>
+<img/distinct graphs.png, id=280, 462.528pt x 346.896pt>
 File: img/distinct graphs.png Graphic file (type png)
 <use img/distinct graphs.png>
 Package pdftex.def Info: img/distinct graphs.png  used on input line 7.
 (pdftex.def)             Requested size: 203.39862pt x 152.55pt.
-<img/score1.png, id=47, 462.528pt x 346.896pt>
+<img/score1.png, id=282, 462.528pt x 346.896pt>
 File: img/score1.png Graphic file (type png)
 <use img/score1.png>
 Package pdftex.def Info: img/score1.png  used on input line 15.
 (pdftex.def)             Requested size: 203.39862pt x 152.55pt.
- [9 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/distinct graphs.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/score1.png>]
-<img/valuable contrasts.png, id=54, 462.528pt x 346.896pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/valuable contrasts.png, id=284, 462.528pt x 346.896pt>
 File: img/valuable contrasts.png Graphic file (type png)
 <use img/valuable contrasts.png>
 Package pdftex.def Info: img/valuable contrasts.png  used on input line 23.
 (pdftex.def)             Requested size: 203.39862pt x 152.55pt.
 
-Underfull \hbox (badness 3354) in paragraph at lines 27--28
-\OT1/cmr/bx/n/10 (i.e. ex-pressed ab-strac-tion, arc den-sity,
+Underfull \hbox (badness 1859) in paragraph at lines 27--28
+\OT1/cmr/m/n/10 arc den-sity, chil-dren er-ror, and par-ent er-ror)
  []
 
 
-Underfull \hbox (badness 2990) in paragraph at lines 27--28
-\OT1/cmr/bx/n/10 chil-dren er-ror, and par-ent er-ror) have
- []
-
-
-Underfull \hbox (badness 1221) in paragraph at lines 27--28
-\OT1/cmr/bx/n/10 and in-cen-tiviz-ing this im-plicit struc-ture.
- []
-
-
-Underfull \hbox (badness 1019) in paragraph at lines 27--28
-\OT1/cmr/bx/n/10 It ap-pears more valu-able for the graph
- []
-
-
-Underfull \hbox (badness 2111) in paragraph at lines 27--28
-\OT1/cmr/bx/n/10 op-ti-miza-tion al-go-rithm in terms of the
+Underfull \hbox (badness 2418) in paragraph at lines 27--28
+\OT1/cmr/m/n/10 al-go-rithm in terms of the ob-jec-tive func-tion
  []
 
 
@@ -458,60 +555,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 ("\OML/cmm/m/it/10 food\OT1/cmr/m/n/10 "\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 "\OML/cmm/m/it/10 vegetable\OT1/cmr/m/n/10 ")\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 ("\OML/cmm/m/it/10 vegetable\OT1/cmr/m/n/10 "\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 "\OML/cmm/m/it/10 potato\OT1/cmr/m/n/10 ")\OMS/cmsy/m/n/10 g$
  []
 
-<img/spectrum.png, id=55, 1387.584pt x 724.8681pt>
+[9 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/distinct graphs.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/score1.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/valuable contrasts.png>]
+<img/spectrum.png, id=298, 1387.584pt x 724.8681pt>
 File: img/spectrum.png Graphic file (type png)
 <use img/spectrum.png>
 Package pdftex.def Info: img/spectrum.png  used on input line 33.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
-<img/too_much_pruning.png, id=56, 1387.584pt x 724.8681pt>
+<img/too_much_pruning.png, id=300, 1387.584pt x 724.8681pt>
 File: img/too_much_pruning.png Graphic file (type png)
 <use img/too_much_pruning.png>
 Package pdftex.def Info: img/too_much_pruning.png  used on input line 41.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/valuable contrasts.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/spectrum.png>]
-<img/short_run.png, id=62, 1387.584pt x 724.8681pt>
+<img/short_run.png, id=302, 1387.584pt x 724.8681pt>
 File: img/short_run.png Graphic file (type png)
 <use img/short_run.png>
 Package pdftex.def Info: img/short_run.png  used on input line 49.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
 
-Underfull \hbox (badness 2150) in paragraph at lines 53--54
-\OT1/cmr/bx/n/10 off be-tween functional-groundedness and
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 1558) in paragraph at lines 53--54
+[]\OT1/cmr/m/n/10 This sen-si-tive bal-ance be-tween the com-pet-
  []
 
-
-Underfull \hbox (badness 5133) in paragraph at lines 53--54
-\OT1/cmr/bx/n/10 re-la-tions among con-cepts. In con-trast,
- []
-
-
-Underfull \hbox (badness 3219) in paragraph at lines 53--54
-\OT1/cmr/bx/n/10 the three leg-i-bil-ity terms em-ployed in
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 53--54
-\OT1/cmr/bx/n/10 groundedness, the com-mu-ni-ca-tion of DL
- []
-
-) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/discussion.tex
-Underfull \hbox (badness 5359) in paragraph at lines 55--1
-\OT1/cmr/bx/n/10 ing this bal-ance is es-pe-cially dif-fi-cult
- []
-
-
-Underfull \hbox (badness 1796) in paragraph at lines 55--1
-\OT1/cmr/bx/n/10 when try-ing to dis-till larger knowl-edge
- []
-
-<img/plant.png, id=63, 1387.584pt x 724.8681pt>
+[10 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/spectrum.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/too_much_pruning.png>]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/discussion.tex
+<img/plant.png, id=317, 1387.584pt x 724.8681pt>
 File: img/plant.png Graphic file (type png)
 <use img/plant.png>
 Package pdftex.def Info: img/plant.png  used on input line 11.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -525,18 +600,21 @@ Underfull \hbox (badness 2302) in paragraph at lines 33--33
 []\OT1/cmr/m/n/10 it was plant shut-down for two
  []
 
-[11 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/too_much_pruning.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/short_run.png>]
-<img/earth.png, id=69, 1387.584pt x 724.8681pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/short_run.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/plant.png>]
+<img/earth.png, id=327, 1387.584pt x 724.8681pt>
 File: img/earth.png Graphic file (type png)
 <use img/earth.png>
 Package pdftex.def Info: img/earth.png  used on input line 46.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
- [12 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/plant.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/earth.png>] [13]
-Underfull \hbox (badness 1418) in paragraph at lines 88--89
-\OT1/cmr/bx/n/10 the ag-gre-gate shape of high-dimensional
+ [12 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/earth.png>] [13])
+Underfull \hbox (badness 6016) in paragraph at lines 92--34
+[]\OT1/cmr/m/n/10 However, there might be other -- bet-ter
  []
 
-[14]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/report.bbl
+(/home/paulbricman/Projects/conceptorflow/docs/thesis/report.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 11--19
 []\OT1/cmr/m/n/10 Alejandro Barredo Ar-ri-eta, Na-talia D^^S^^Paz-
  []
@@ -548,7 +626,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--19
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--19
-\OT1/cmr/m/n/10 URL \OT1/cmtt/m/n/10 http://arxiv.org/abs/1910.10045\OT1/cmr/m/n/10 .
+\OT1/cmr/m/n/10 URL []$\OT1/cmtt/m/n/10 http :// arxiv [] .org / abs / 1910 [] .10045$[]\OT1/cmr/m/n/10 .
  []
 
 
@@ -566,7 +644,7 @@ Underfull \hbox (badness 1694) in paragraph at lines 22--27
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 22--27
-\OT1/cmr/m/n/10 URL \OT1/cmtt/m/n/10 http://arxiv.org/abs/1607.06520\OT1/cmr/m/n/10 .
+\OT1/cmr/m/n/10 URL []$\OT1/cmtt/m/n/10 http :// arxiv [] .org / abs / 1607 [] .06520$[]\OT1/cmr/m/n/10 .
  []
 
 
@@ -580,23 +658,23 @@ Underfull \hbox (badness 1072) in paragraph at lines 41--55
  []
 
 
-Underfull \hbox (badness 4291) in paragraph at lines 41--55
-\OT1/cmr/m/n/10 James Keel-ing, Maria Tsim-poukelli, Jackie
+Underfull \hbox (badness 1496) in paragraph at lines 41--55
+\OT1/cmr/m/n/10 Don-ner, Leslie Fritz, Cris-tian Galperti, An-
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 41--55
-\OT1/cmr/m/n/10 Kay, An-toine Merle, Jean-Marc Moret, Seb
+Underfull \hbox (badness 1888) in paragraph at lines 41--55
+\OT1/cmr/m/n/10 Olivier Sauter, Cris-tian Som-mariva, Ste-fano
  []
 
 
-Overfull \hbox (54.27551pt too wide) in paragraph at lines 41--55
-\OT1/cmtt/m/n/10 https://www.nature.com/articles/s41586-021-04301-9\OT1/cmr/m/n/10 .
+Underfull \hbox (badness 1735) in paragraph at lines 41--55
+\OT1/cmr/m/n/10 Kohli, Ko-ray Kavukcuoglu, Demis Has-s-abis,
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 41--55
-\OT1/cmr/m/n/10 Num-ber: 7897 Pub-lisher: Na-ture Pub-lish-ing
+Underfull \hbox (badness 1005) in paragraph at lines 41--55
+\OT1/cmr/m/n/10 learn-ing.  \OT1/cmr/m/it/10 Na-ture\OT1/cmr/m/n/10 , 602(7897):414--419, Febru-
  []
 
 
@@ -614,24 +692,19 @@ Underfull \hbox (badness 3668) in paragraph at lines 65--72
 \OT1/cmr/m/n/10 Matthias Min-derer, Georg Heigold, Syl-vain
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
-[]\OT1/cmr/m/n/10 Pengcheng He, Xi-aodong Liu, Jian-feng
+[14]
+Underfull \hbox (badness 3460) in paragraph at lines 74--79
+[]\OT1/cmr/m/n/10 Pengcheng He, Xi-aodong Liu, Jian-feng Gao,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
-\OT1/cmr/m/n/10 Gao, and Weizhu Chen.  De-BERTa:
+Underfull \hbox (badness 3375) in paragraph at lines 74--79
+\OT1/cmr/m/n/10 and Weizhu Chen.  De-BERTa: Decoding-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--79
-\OT1/cmr/m/n/10 Decoding-enhanced BERT with Dis-en-
- []
-
-
-Underfull \hbox (badness 6658) in paragraph at lines 74--79
-\OT1/cmr/m/n/10 tan-gled At-ten-tion, Oc-to-ber 2021.  URL
+Underfull \hbox (badness 5431) in paragraph at lines 74--79
+\OT1/cmr/m/n/10 Oc-to-ber 2021.  URL []$\OT1/cmtt/m/n/10 http :// arxiv [] .org /
  []
 
 
@@ -640,88 +713,23 @@ Underfull \hbox (badness 1024) in paragraph at lines 100--109
  []
 
 
-Overfull \hbox (337.77304pt too wide) in paragraph at lines 100--109
-\OT1/cmtt/m/n/10 https://par.nsf.gov/biblio/10158557-evaluating-bert-natural-language-inference-case-study-commitmentbank\OT1/cmr/m/n/10 . 
+Underfull \hbox (badness 10000) in paragraph at lines 100--109
+[]$\OT1/cmtt/m/n/10 https :// par [] .nsf [] .gov / biblio / 10158557 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
-[]\OT1/cmr/m/n/10 Philipp Koehn.  Neu-ral Ma-chine
+Underfull \hbox (badness 10000) in paragraph at lines 100--109
+\OT1/cmtt/m/n/10 -evaluating [] -bert [] -natural [] -language []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--115
-\OT1/cmr/m/n/10 Trans-la-tion, Septem-ber 2017.  URL
+Underfull \hbox (badness 1558) in paragraph at lines 111--115
+[]\OT1/cmr/m/n/10 Philipp Koehn.  Neu-ral Ma-chine Trans-la-tion,
  []
 
 
-Underfull \hbox (badness 4595) in paragraph at lines 118--124
-\OT1/cmr/m/n/10 man, Kevin Gim-pel, Piyush Sharma, and
- []
-
-
-Underfull \hbox (badness 3815) in paragraph at lines 118--124
-\OT1/cmr/m/n/10 Radu Sori-cut.  AL-BERT: A Lite BERT
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--124
-\OT1/cmr/m/n/10 for Self-supervised Learn-ing of Lan-guage
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--124
-\OT1/cmr/m/n/10 Rep-re-sen-ta-tions, Febru-ary 2020.  URL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--133
-[]\OT1/cmr/m/n/10 Yann Le-Cun, Yoshua Ben-gio, and Ge-of-
- []
-
-
-Underfull \hbox (badness 1337) in paragraph at lines 126--133
-\OT1/cmr/m/n/10 frey Hin-ton.  Deep learn-ing.  \OT1/cmr/m/it/10 Na-ture\OT1/cmr/m/n/10 , 521
- []
-
-
-Underfull \hbox (badness 6808) in paragraph at lines 126--133
-\OT1/cmr/m/n/10 (7553):436--444, May 2015.  ISSN 1476-
- []
-
-
-Underfull \hbox (badness 5771) in paragraph at lines 126--133
-\OT1/cmr/m/n/10 4687.  doi: 10.1038/na-ture14539.  URL
- []
-
-
-Overfull \hbox (17.52583pt too wide) in paragraph at lines 126--133
-\OT1/cmtt/m/n/10 https://www.nature.com/articles/nature14539\OT1/cmr/m/n/10 .
- []
-
-
-Underfull \hbox (badness 2245) in paragraph at lines 126--133
-\OT1/cmr/m/n/10 Num-ber: 7553 Pub-lisher: Na-ture Pub-lish-ing
- []
-
-
-Underfull \hbox (badness 2772) in paragraph at lines 135--145
-[]\OT1/cmr/m/n/10 Ninghao Liu, Xiao Huang, Jun-dong Li, and
- []
-
-
-Underfull \hbox (badness 1226) in paragraph at lines 135--145
-\OT1/cmr/m/n/10 bed-ding via Tax-on-omy In-duc-tion.  In \OT1/cmr/m/it/10 Pro-
- []
-
-
-Underfull \hbox (badness 2368) in paragraph at lines 135--145
-\OT1/cmr/m/it/10 ceed-ings of the 24th ACM SIGKDD In-ter-
- []
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 135--145
-\OT1/cmr/m/it/10 na-tional Con-fer-ence on Knowl-edge Dis-cov-ery
+Underfull \hbox (badness 1533) in paragraph at lines 111--115
+\OT1/cmr/m/n/10 Septem-ber 2017.  URL []$\OT1/cmtt/m/n/10 http :// arxiv [] .org /
  []
 
 
@@ -736,17 +744,12 @@ Underfull \hbox (badness 2042) in paragraph at lines 148--154
 
 
 Underfull \hbox (badness 2134) in paragraph at lines 156--161
-\OT1/cmtt/m/n/10 http://arxiv.org/abs/2108.04840\OT1/cmr/m/n/10 .  arXiv:
+[]$\OT1/cmtt/m/n/10 http :// arxiv [] .org / abs / 2108 [] .04840$[]\OT1/cmr/m/n/10 .  arXiv:
  []
 
 
-Underfull \hbox (badness 4001) in paragraph at lines 172--180
-[]\OT1/cmr/m/n/10 Alec Rad-ford, Jong Wook Kim, Chris Hal-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--180
-\OT1/cmr/m/n/10 URL \OT1/cmtt/m/n/10 http://arxiv.org/abs/2103.00020\OT1/cmr/m/n/10 .
+Underfull \hbox (badness 1895) in paragraph at lines 172--180
+\OT1/cmr/m/n/10 wal, Girish Sas-try, Amanda Askell, Pamela
  []
 
 
@@ -760,38 +763,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--198
  []
 
 
-Overfull \hbox (54.27551pt too wide) in paragraph at lines 185--198
-\OT1/cmtt/m/n/10 https://www.nature.com/articles/s41586-021-03854-z\OT1/cmr/m/n/10 .
+Underfull \hbox (badness 1024) in paragraph at lines 185--198
+\OT1/cmr/m/n/10 Brock, Karen Si-monyan, Raia Had-sell, Niall
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 185--198
-\OT1/cmr/m/n/10 Num-ber: 7878 Pub-lisher: Na-ture Pub-lish-ing
- []
-
-[16]
-Underfull \hbox (badness 1028) in paragraph at lines 200--206
-[]\OT1/cmr/m/n/10 Nils Reimers and Iryna Gurevych.  Sentence-
+Underfull \hbox (badness 3536) in paragraph at lines 185--198
+\OT1/cmr/m/it/10 Na-ture\OT1/cmr/m/n/10 , 597(7878):672--677, Septem-ber 2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--206
-\OT1/cmr/m/n/10 BERT: Sen-tence Em-bed-dings us-ing
+Underfull \hbox (badness 10000) in paragraph at lines 185--198
+\OT1/cmr/m/n/10 URL []$\OT1/cmtt/m/n/10 https :// www [] .nature [] .com / articles /
  []
 
-
-Underfull \hbox (badness 7326) in paragraph at lines 200--206
-\OT1/cmr/m/n/10 Siamese BERT-Networks.  Tech-ni-cal Re-
- []
-
-
-Underfull \hbox (badness 2591) in paragraph at lines 200--206
-\OT1/cmr/m/n/10 port arXiv:1908.10084, arXiv, Au-gust 2019.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--206
-\OT1/cmr/m/n/10 URL \OT1/cmtt/m/n/10 http://arxiv.org/abs/1908.10084\OT1/cmr/m/n/10 .
+[15]
+Underfull \hbox (badness 1888) in paragraph at lines 200--206
+\OT1/cmr/m/n/10 Sen-tence Em-bed-dings us-ing Siamese BERT-
  []
 
 
@@ -815,13 +803,13 @@ Underfull \hbox (badness 1648) in paragraph at lines 209--214
  []
 
 
-Overfull \hbox (54.27551pt too wide) in paragraph at lines 218--228
-\OT1/cmtt/m/n/10 https://www.nature.com/articles/s41586-020-03051-4\OT1/cmr/m/n/10 .
+Underfull \hbox (badness 1360) in paragraph at lines 218--228
+\OT1/cmr/m/n/10 Hu-bert, Karen Si-monyan, Lau-rent Sifre, Si-
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 218--228
-\OT1/cmr/m/n/10 Num-ber: 7839 Pub-lisher: Na-ture Pub-lish-ing
+Underfull \hbox (badness 1968) in paragraph at lines 218--228
+\OT1/cmr/m/n/10 model.  \OT1/cmr/m/it/10 Na-ture\OT1/cmr/m/n/10 , 588(7839):604--609, De-cem-
  []
 
 
@@ -830,38 +818,8 @@ Underfull \hbox (badness 1331) in paragraph at lines 230--237
  []
 
 
-Underfull \hbox (badness 1960) in paragraph at lines 230--237
-\OT1/cmr/m/n/10 In \OT1/cmr/m/it/10 Pro-ceed-ings of the 57th An-nual Meet-ing
- []
-
-
-Underfull \hbox (badness 4217) in paragraph at lines 230--237
-\OT1/cmr/m/it/10 of the As-so-ci-a-tion for Com-pu-ta-tional Lin-
- []
-
-
-Underfull \hbox (badness 7851) in paragraph at lines 230--237
-\OT1/cmr/m/it/10 guis-tics\OT1/cmr/m/n/10 , pages 4593--4601, Flo-rence, Italy,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--237
-\OT1/cmr/m/n/10 2019. As-so-ci-a-tion for Com-pu-ta-tional Lin-
- []
-
-
-Underfull \hbox (badness 1057) in paragraph at lines 230--237
-\OT1/cmr/m/n/10 guis-tics.  doi: 10.18653/v1/P19-1452.  URL
- []
-
-
-Overfull \hbox (7.02592pt too wide) in paragraph at lines 230--237
-\OT1/cmtt/m/n/10 https://www.aclweb.org/anthology/P19-1452\OT1/cmr/m/n/10 . 
- []
-
-
-Underfull \hbox (badness 2941) in paragraph at lines 239--247
-[]\OT1/cmr/m/n/10 Antonio Toral, Sheila Castilho, Ke Hu, and
+Underfull \hbox (badness 2512) in paragraph at lines 239--247
+\OT1/cmr/m/n/10 .18653 / v1 / W18 [] -6312$.  URL []$\OT1/cmtt/m/n/10 http :// aclweb []
  []
 
 
@@ -871,53 +829,53 @@ Underfull \hbox (badness 1270) in paragraph at lines 249--254
 
 
 Underfull \hbox (badness 2134) in paragraph at lines 249--254
-\OT1/cmtt/m/n/10 http://arxiv.org/abs/2010.11967\OT1/cmr/m/n/10 .  arXiv:
+[]$\OT1/cmtt/m/n/10 http :// arxiv [] .org / abs / 2010 [] .11967$[]\OT1/cmr/m/n/10 .  arXiv:
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 257--263
-[]\OT1/cmr/m/n/10 Peter West, Chan-dra Bha-ga-vat-ula, Jack Hes-
+Underfull \hbox (badness 1721) in paragraph at lines 257--263
+\OT1/cmr/m/n/10 Xim-ing Lu, Sean Welleck, and Yejin Choi.
  []
 
 
-Underfull \hbox (badness 1845) in paragraph at lines 257--263
-\OT1/cmr/m/n/10 Bras, Xim-ing Lu, Sean Welleck, and Yejin
+Underfull \hbox (badness 1762) in paragraph at lines 257--263
+\OT1/cmr/m/n/10 Sym-bolic Knowl-edge Dis-til-la-tion: from Gen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--263
-\OT1/cmr/m/n/10 Choi.  Sym-bolic Knowl-edge Dis-til-la-tion:
+Underfull \hbox (badness 3428) in paragraph at lines 265--271
+[]\OT1/cmr/m/n/10 Wenpeng Yin, Ja-maal Hay, and Dan Roth.
  []
 
 
-Underfull \hbox (badness 6961) in paragraph at lines 257--263
-\OT1/cmr/m/n/10 from Gen-eral Lan-guage Mod-els to Com-
+Underfull \hbox (badness 3568) in paragraph at lines 265--271
+\OT1/cmr/m/n/10 Bench-mark-ing Zero-shot Text Clas-si-fi-ca-tion:
  []
 
-
-Underfull \hbox (badness 7576) in paragraph at lines 257--263
-\OT1/cmr/m/n/10 mon-sense Mod-els, Oc-to-ber 2021.  URL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 265--271
-\OT1/cmr/m/n/10 URL \OT1/cmtt/m/n/10 http://arxiv.org/abs/1909.00161\OT1/cmr/m/n/10 .
- []
-
-) [17] (/home/paulbricman/Projects/conceptorflow/docs/thesis/report.aux) ) 
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
+ [16]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 38.
+ (/home/paulbricman/Projects/conceptorflow/docs/thesis/report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 38.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 38.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: A00CD703B27DB4F9295D797F6B47991B;1449.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 38.
+ ) 
 Here is how much of TeX's memory you used:
- 8585 strings out of 481239
- 166026 string characters out of 5920376
- 403412 words of memory out of 5000000
- 23668 multiletter control sequences out of 15000+600000
- 545898 words of font info for 76 fonts, out of 8000000 for 9000
+ 12572 strings out of 481239
+ 227900 string characters out of 5920376
+ 494687 words of memory out of 5000000
+ 27476 multiletter control sequences out of 15000+600000
+ 544920 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,14n,49p,1520b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc} </home/paulbricman/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-bold/cmbcsc10.1037pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on /home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf (17 pages, 2564109 bytes).
+ 49i,14n,49p,1543b,929s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc} </home/paulbricman/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-bold/cmbcsc10.1037pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on /home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf (16 pages, 2594543 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 500 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 
