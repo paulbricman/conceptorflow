@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.15)  29 MAY 2022 08:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.15)  3 JUN 2022 15:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,11 +526,11 @@ File: img/distinct graphs.png Graphic file (type png)
 <use img/distinct graphs.png>
 Package pdftex.def Info: img/distinct graphs.png  used on input line 7.
 (pdftex.def)             Requested size: 203.39862pt x 152.55pt.
-<img/score1.png, id=282, 462.528pt x 346.896pt>
+<img/score1.png, id=282, 404.712pt x 293.4162pt>
 File: img/score1.png Graphic file (type png)
 <use img/score1.png>
 Package pdftex.def Info: img/score1.png  used on input line 15.
-(pdftex.def)             Requested size: 203.39862pt x 152.55pt.
+(pdftex.def)             Requested size: 203.39862pt x 147.46437pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -572,20 +572,16 @@ File: img/short_run.png Graphic file (type png)
 Package pdftex.def Info: img/short_run.png  used on input line 49.
 (pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Underfull \hbox (badness 1558) in paragraph at lines 53--54
 []\OT1/cmr/m/n/10 This sen-si-tive bal-ance be-tween the com-pet-
  []
 
-[10 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/spectrum.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/too_much_pruning.png>]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/discussion.tex
-<img/plant.png, id=317, 1387.584pt x 724.8681pt>
+[10 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/spectrum.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/too_much_pruning.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/short_run.png>]) (/home/paulbricman/Projects/conceptorflow/docs/thesis/tex/discussion.tex
+<img/plant.png, id=318, 1107.1764pt x 589.0005pt>
 File: img/plant.png Graphic file (type png)
 <use img/plant.png>
 Package pdftex.def Info: img/plant.png  used on input line 11.
-(pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
+(pdftex.def)             Requested size: 203.39862pt x 108.19945pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -600,15 +596,12 @@ Underfull \hbox (badness 2302) in paragraph at lines 33--33
 []\OT1/cmr/m/n/10 it was plant shut-down for two
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/short_run.png> </home/paulbricman/Projects/conceptorflow/docs/thesis/img/plant.png>]
-<img/earth.png, id=327, 1387.584pt x 724.8681pt>
+[11 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/plant.png>]
+<img/earth.png, id=327, 1102.8402pt x 585.387pt>
 File: img/earth.png Graphic file (type png)
 <use img/earth.png>
 Package pdftex.def Info: img/earth.png  used on input line 46.
-(pdftex.def)             Requested size: 203.39862pt x 106.24794pt.
+(pdftex.def)             Requested size: 203.39862pt x 107.9644pt.
  [12 </home/paulbricman/Projects/conceptorflow/docs/thesis/img/earth.png>] [13])
 Underfull \hbox (badness 6016) in paragraph at lines 92--34
 []\OT1/cmr/m/n/10 However, there might be other -- bet-ter
@@ -633,9 +626,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--19
 Underfull \hbox (badness 10000) in paragraph at lines 11--19
 \OT1/cmr/m/n/10 Num-ber: arXiv:1910.10045 arXiv:1910.10045
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 1694) in paragraph at lines 22--27
@@ -872,7 +862,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  49i,14n,49p,1543b,929s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc} </home/paulbricman/.texlive2019/texmf-var/fonts/pk/ljfour/public/cm-mf-extra-bold/cmbcsc10.1037pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on /home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf (16 pages, 2594543 bytes).
+Output written on /home/paulbricman/Projects/conceptorflow/docs/thesis/report.pdf (16 pages, 2551509 bytes).
 PDF statistics:
  500 PDF objects out of 1000 (max. 8388607)
  417 compressed objects within 5 object streams
