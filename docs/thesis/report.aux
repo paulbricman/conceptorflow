@@ -65,50 +65,54 @@
 \citation{devlin_bert_nodate}
 \citation{jaeger_controlling_2017}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Data}{4}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Conceptors}{5}{subsection.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Abstraction Ordering}{5}{subsection.2.4}\protected@file@percent }
-\citation{jaeger_controlling_2017}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Graph Optimization}{6}{subsection.2.5}\protected@file@percent }
-\citation{madsen_post-hoc_2021}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Graph optimization in NSC\relax }}{8}{algorithm.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces A: Exemplars are located and extracted together with their surrounding contexts. B: Each exemplar is encoded into a contextual embedding. Notably, the same symbol is encoded into different such embeddings based on context, resulting in a state cloud per symbol. C: Conceptors are derived from each state cloud as more compact representations.\relax }}{5}{figure.caption.1}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{alg:gs}{{2.1}{8}{Graph optimization in NSC\relax }{algorithm.2.1}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Nested State Clouds\relax }}{8}{algorithm.2.2}\protected@file@percent }
-\newlabel{alg:nsc}{{2.2}{8}{Nested State Clouds\relax }{algorithm.2.2}{}}
+\newlabel{fig:exemplars-conceptors}{{2.1}{5}{A: Exemplars are located and extracted together with their surrounding contexts. B: Each exemplar is encoded into a contextual embedding. Notably, the same symbol is encoded into different such embeddings based on context, resulting in a state cloud per symbol. C: Conceptors are derived from each state cloud as more compact representations.\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Conceptors}{5}{subsection.2.3}\protected@file@percent }
+\citation{jaeger_controlling_2017}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Abstraction Ordering}{6}{subsection.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces A: The matrix $D$ represents the pairwise relations of abstraction between conceptors. B: Matrix $D$ is populated using abstraction heuristics, where $D_{ij}$ approximates how much more abstract conceptor $C_i$ is with respect to conceptor $C_j$. C: The graph optimization process attempts to generate an ontology which is (1) faithful to the relations of abstraction identified previously, and (2) legible and sparse.\relax }}{7}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:conceptors-graph}{{2.2}{7}{A: The matrix $D$ represents the pairwise relations of abstraction between conceptors. B: Matrix $D$ is populated using abstraction heuristics, where $D_{ij}$ approximates how much more abstract conceptor $C_i$ is with respect to conceptor $C_j$. C: The graph optimization process attempts to generate an ontology which is (1) faithful to the relations of abstraction identified previously, and (2) legible and sparse.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Graph Optimization}{7}{subsection.2.5}\protected@file@percent }
+\citation{madsen_post-hoc_2021}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Graph optimization in NSC\relax }}{9}{algorithm.2.1}\protected@file@percent }
+\newlabel{alg:gs}{{2.1}{9}{Graph optimization in NSC\relax }{algorithm.2.1}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Nested State Clouds\relax }}{9}{algorithm.2.2}\protected@file@percent }
+\newlabel{alg:nsc}{{2.2}{9}{Nested State Clouds\relax }{algorithm.2.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{9}{section.3}\protected@file@percent }
 \newlabel{sec:results}{{3}{9}{Results}{section.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{9}{figure.caption.1}\protected@file@percent }
-\newlabel{fig:nsc_output_graph}{{3.1}{9}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Candidate score by epoch during the graph optimization process.\relax }}{9}{figure.caption.2}\protected@file@percent }
-\newlabel{fig:nsc_score_history}{{3.2}{9}{Candidate score by epoch during the graph optimization process.\relax }{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{9}{figure.caption.3}\protected@file@percent }
-\newlabel{fig:valuable}{{3.3}{9}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{10}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:nsc_output_graph}{{3.1}{10}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Candidate score by epoch during the graph optimization process.\relax }}{10}{figure.caption.4}\protected@file@percent }
+\newlabel{fig:nsc_score_history}{{3.2}{10}{Candidate score by epoch during the graph optimization process.\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{10}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:valuable}{{3.3}{10}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.5}{}}
 \citation{madsen_post-hoc_2021}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{10}{figure.caption.4}\protected@file@percent }
-\newlabel{fig:spectrum}{{3.4}{10}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces NSC output graph after undervaluing children count per node constraints.\relax }}{10}{figure.caption.5}\protected@file@percent }
-\newlabel{fig:children}{{3.5}{10}{NSC output graph after undervaluing children count per node constraints.\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces NSC output graph after undervaluing arc pruning.\relax }}{10}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:pruning}{{3.6}{10}{NSC output graph after undervaluing arc pruning.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{11}{section.4}\protected@file@percent }
-\newlabel{sec:discussion}{{4}{11}{Discussion}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Potential issues}{11}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}The same symbols can represent different concepts.}{11}{subsubsection.4.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 2D PCA projection of the state cloud associated with the symbol "plant"\relax }}{11}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:plant}{{4.1}{11}{2D PCA projection of the state cloud associated with the symbol "plant"\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}State clouds are non-linear.}{11}{subsubsection.4.1.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Context samples by K-means cluster of "plant" state cloud.\relax }}{11}{table.caption.8}\protected@file@percent }
-\newlabel{tab:samples}{{4.1}{11}{Context samples by K-means cluster of "plant" state cloud.\relax }{table.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces NSC output graph when applied to BERT using the shown symbols.\relax }}{11}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:spectrum}{{3.4}{11}{NSC output graph when applied to BERT using the shown symbols.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces NSC output graph after undervaluing children count per node constraints.\relax }}{11}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:children}{{3.5}{11}{NSC output graph after undervaluing children count per node constraints.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces NSC output graph after undervaluing arc pruning.\relax }}{11}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:pruning}{{3.6}{11}{NSC output graph after undervaluing arc pruning.\relax }{figure.caption.8}{}}
 \citation{west_symbolic_2021}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces 2D PCA projection of the state cloud associated with the symbol "earth"\relax }}{12}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:earth}{{4.2}{12}{2D PCA projection of the state cloud associated with the symbol "earth"\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}NSC requires many exemplars.}{12}{subsubsection.4.1.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}NSC is influenced by the choice of auxiliary data.}{12}{subsubsection.4.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Future work}{12}{subsection.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Improved noise robustness}{12}{subsubsection.4.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Improved graph optimization scalability}{13}{subsubsection.4.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Beyond abstraction ordering}{13}{subsubsection.4.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Beyond token embeddings}{13}{subsubsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Discussion}{12}{section.4}\protected@file@percent }
+\newlabel{sec:discussion}{{4}{12}{Discussion}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Potential issues}{12}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}The same symbols can represent different concepts.}{12}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces 2D PCA projection of the state cloud associated with the symbol "plant"\relax }}{12}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:plant}{{4.1}{12}{2D PCA projection of the state cloud associated with the symbol "plant"\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}State clouds are non-linear.}{12}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces 2D PCA projection of the state cloud associated with the symbol "earth"\relax }}{12}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:earth}{{4.2}{12}{2D PCA projection of the state cloud associated with the symbol "earth"\relax }{figure.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Context samples by K-means cluster of "plant" state cloud.\relax }}{12}{table.caption.10}\protected@file@percent }
+\newlabel{tab:samples}{{4.1}{12}{Context samples by K-means cluster of "plant" state cloud.\relax }{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}NSC requires many exemplars.}{13}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4}NSC is influenced by the choice of auxiliary data.}{13}{subsubsection.4.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Future work}{13}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Improved noise robustness}{13}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Improved graph optimization scalability}{14}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Beyond abstraction ordering}{14}{subsubsection.4.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4}Beyond token embeddings}{14}{subsubsection.4.2.4}\protected@file@percent }
 \bibstyle{plainnat}
 \bibdata{literature}
 \bibcite{arrieta_explainable_2019}{{1}{2019}{{Arrieta et~al.}}{{Arrieta, Díaz-Rodríguez, Del~Ser, Bennetot, Tabik, Barbado, García, Gil-López, Molina, Benjamins, Chatila, and Herrera}}}
@@ -117,12 +121,12 @@
 \bibcite{degrave_magnetic_2022}{{4}{2022}{{Degrave et~al.}}{{Degrave, Felici, Buchli, Neunert, Tracey, Carpanese, Ewalds, Hafner, Abdolmaleki, de~las Casas, Donner, Fritz, Galperti, Huber, Keeling, Tsimpoukelli, Kay, Merle, Moret, Noury, Pesamosca, Pfau, Sauter, Sommariva, Coda, Duval, Fasoli, Kohli, Kavukcuoglu, Hassabis, and Riedmiller}}}
 \bibcite{devlin_bert_nodate}{{5}{}{{Devlin et~al.}}{{Devlin, Chang, Lee, and Toutanova}}}
 \bibcite{dosovitskiy_image_2021}{{6}{2021}{{Dosovitskiy et~al.}}{{Dosovitskiy, Beyer, Kolesnikov, Weissenborn, Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and Houlsby}}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Alternative abstraction heuristics}{14}{subsubsection.4.2.5}\protected@file@percent }
 \bibcite{he_deberta_2021}{{7}{2021}{{He et~al.}}{{He, Liu, Gao, and Chen}}}
 \bibcite{hinton_how_2021}{{8}{2021}{{Hinton}}{{}}}
 \bibcite{jaeger_controlling_2017}{{9}{2017}{{Jaeger}}{{}}}
 \bibcite{jain_attention_nodate}{{10}{}{{Jain and Wallace}}{{}}}
 \bibcite{jiang_evaluating_2019}{{11}{2019}{{Jiang and de~Marneffe}}{{}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.5}Alternative abstraction heuristics}{15}{subsubsection.4.2.5}\protected@file@percent }
 \bibcite{koehn_neural_2017}{{12}{2017}{{Koehn}}{{}}}
 \bibcite{lan_albert_2020}{{13}{2020}{{Lan et~al.}}{{Lan, Chen, Goodman, Gimpel, Sharma, and Soricut}}}
 \bibcite{lecun_deep_2015}{{14}{2015}{{LeCun et~al.}}{{LeCun, Bengio, and Hinton}}}
