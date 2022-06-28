@@ -1,0 +1,288 @@
+\begin{thebibliography}{30}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Arrieta et~al.(2019)Arrieta, Díaz-Rodríguez, Del~Ser, Bennetot,
+  Tabik, Barbado, García, Gil-López, Molina, Benjamins, Chatila, and
+  Herrera]{arrieta_explainable_2019}
+Alejandro~Barredo Arrieta, Natalia Díaz-Rodríguez, Javier Del~Ser, Adrien
+  Bennetot, Siham Tabik, Alberto Barbado, Salvador García, Sergio Gil-López,
+  Daniel Molina, Richard Benjamins, Raja Chatila, and Francisco Herrera.
+\newblock Explainable {Artificial} {Intelligence} ({XAI}): {Concepts},
+  {Taxonomies}, {Opportunities} and {Challenges} toward {Responsible} {AI},
+  December 2019.
+\newblock URL \url{http://arxiv.org/abs/1910.10045}.
+\newblock Number: arXiv:1910.10045 arXiv:1910.10045 [cs].
+
+\bibitem[Bahdanau et~al.(2015)Bahdanau, Cho, and Bengio]{bahdanau_neural_2016}
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.
+\newblock Neural machine translation by jointly learning to align and
+  translate.
+\newblock \emph{CoRR}, abs/1409.0473, 2015.
+
+\bibitem[Bolukbasi et~al.(2016)Bolukbasi, Chang, Zou, Saligrama, and
+  Kalai]{bolukbasi_man_2016}
+Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai.
+\newblock Man is to {Computer} {Programmer} as {Woman} is to {Homemaker}?
+  {Debiasing} {Word} {Embeddings}, July 2016.
+\newblock URL \url{http://arxiv.org/abs/1607.06520}.
+\newblock Number: arXiv:1607.06520 arXiv:1607.06520 [cs, stat].
+
+\bibitem[Danilevsky et~al.(2020)Danilevsky, Qian, Aharonov, Katsis, Kawas, and
+  Sen]{danilevsky_survey_nodate}
+Marina Danilevsky, Kun Qian, Ranit Aharonov, Yannis Katsis, Ban Kawas, and
+  Prithviraj Sen.
+\newblock A {Survey} of the {State} of {Explainable} {AI} for {Natural}
+  {Language} {Processing}.
+\newblock page~13, 2020.
+
+\bibitem[Degrave et~al.(2022)Degrave, Felici, Buchli, Neunert, Tracey,
+  Carpanese, Ewalds, Hafner, Abdolmaleki, de~las Casas, Donner, Fritz,
+  Galperti, Huber, Keeling, Tsimpoukelli, Kay, Merle, Moret, Noury, Pesamosca,
+  Pfau, Sauter, Sommariva, Coda, Duval, Fasoli, Kohli, Kavukcuoglu, Hassabis,
+  and Riedmiller]{degrave_magnetic_2022}
+Jonas Degrave, Federico Felici, Jonas Buchli, Michael Neunert, Brendan Tracey,
+  Francesco Carpanese, Timo Ewalds, Roland Hafner, Abbas Abdolmaleki, Diego
+  de~las Casas, Craig Donner, Leslie Fritz, Cristian Galperti, Andrea Huber,
+  James Keeling, Maria Tsimpoukelli, Jackie Kay, Antoine Merle, Jean-Marc
+  Moret, Seb Noury, Federico Pesamosca, David Pfau, Olivier Sauter, Cristian
+  Sommariva, Stefano Coda, Basil Duval, Ambrogio Fasoli, Pushmeet Kohli, Koray
+  Kavukcuoglu, Demis Hassabis, and Martin Riedmiller.
+\newblock Magnetic control of tokamak plasmas through deep reinforcement
+  learning.
+\newblock \emph{Nature}, 602\penalty0 (7897):\penalty0 414--419, February 2022.
+\newblock ISSN 1476-4687.
+\newblock \doi{10.1038/s41586-021-04301-9}.
+\newblock URL \url{https://www.nature.com/articles/s41586-021-04301-9}.
+\newblock Number: 7897 Publisher: Nature Publishing Group.
+
+\bibitem[Devlin et~al.(2019)Devlin, Chang, Lee, and
+  Toutanova]{devlin_bert_nodate}
+Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock \emph{ArXiv}, abs/1810.04805, 2019.
+
+\bibitem[Dosovitskiy et~al.(2021)Dosovitskiy, Beyer, Kolesnikov, Weissenborn,
+  Zhai, Unterthiner, Dehghani, Minderer, Heigold, Gelly, Uszkoreit, and
+  Houlsby]{dosovitskiy_image_2021}
+Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn,
+  Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg
+  Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+\newblock An {Image} is {Worth} 16x16 {Words}: {Transformers} for {Image}
+  {Recognition} at {Scale}, June 2021.
+\newblock URL \url{http://arxiv.org/abs/2010.11929}.
+\newblock Number: arXiv:2010.11929 arXiv:2010.11929 [cs].
+
+\bibitem[He et~al.(2021)He, Liu, Gao, and Chen]{he_deberta_2021}
+Pengcheng He, Xiaodong Liu, Jianfeng Gao, and Weizhu Chen.
+\newblock {DeBERTa}: {Decoding}-enhanced {BERT} with {Disentangled}
+  {Attention}, October 2021.
+\newblock URL \url{http://arxiv.org/abs/2006.03654}.
+\newblock Number: arXiv:2006.03654 arXiv:2006.03654 [cs].
+
+\bibitem[Hinton(2021)]{hinton_how_2021}
+Geoffrey Hinton.
+\newblock How to represent part-whole hierarchies in a neural network, February
+  2021.
+\newblock URL \url{http://arxiv.org/abs/2102.12627}.
+\newblock Number: arXiv:2102.12627 arXiv:2102.12627 [cs].
+
+\bibitem[Jaeger(2017)]{jaeger_controlling_2017}
+Herbert Jaeger.
+\newblock Controlling {Recurrent} {Neural} {Networks} by {Conceptors}, April
+  2017.
+\newblock URL \url{http://arxiv.org/abs/1403.3369}.
+\newblock Number: arXiv:1403.3369 arXiv:1403.3369 [cs].
+
+\bibitem[Jain and Wallace(2019)]{jain_attention_nodate}
+Sarthak Jain and Byron~C. Wallace.
+\newblock Attention is not explanation.
+\newblock In \emph{NAACL}, 2019.
+
+\bibitem[Jiang and de~Marneffe(2019)]{jiang_evaluating_2019}
+Nanjiang Jiang and Marie-Catherine de~Marneffe.
+\newblock Evaluating {BERT} for natural language inference: {A} case study on
+  the {CommitmentBank}.
+\newblock \emph{Proceedings of the 2019 Conference on Empirical Methods in
+  Natural Language Processing and the 9th International Joint Conference on
+  Natural Language Processing (EMNLP-IJCNLP)}, January 2019.
+\newblock \doi{10.18653/v1/D19-1630}.
+\newblock URL
+  \url{https://par.nsf.gov/biblio/10158557-evaluating-bert-natural-language-inference-case-study-commitmentbank}.
+
+\bibitem[Koehn(2017)]{koehn_neural_2017}
+Philipp Koehn.
+\newblock Neural {Machine} {Translation}, September 2017.
+\newblock URL \url{http://arxiv.org/abs/1709.07809}.
+\newblock Number: arXiv:1709.07809 arXiv:1709.07809 [cs].
+
+\bibitem[Lan et~al.(2020)Lan, Chen, Goodman, Gimpel, Sharma, and
+  Soricut]{lan_albert_2020}
+Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and
+  Radu Soricut.
+\newblock {ALBERT}: {A} {Lite} {BERT} for {Self}-supervised {Learning} of
+  {Language} {Representations}, February 2020.
+\newblock URL \url{http://arxiv.org/abs/1909.11942}.
+\newblock Number: arXiv:1909.11942 arXiv:1909.11942 [cs].
+
+\bibitem[LeCun et~al.(2015)LeCun, Bengio, and Hinton]{lecun_deep_2015}
+Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock \emph{Nature}, 521\penalty0 (7553):\penalty0 436--444, May 2015.
+\newblock ISSN 1476-4687.
+\newblock \doi{10.1038/nature14539}.
+\newblock URL \url{https://www.nature.com/articles/nature14539}.
+\newblock Number: 7553 Publisher: Nature Publishing Group.
+
+\bibitem[Liu et~al.(2018)Liu, Huang, Li, and Hu]{liu_interpretation_2018}
+Ninghao Liu, Xiao Huang, Jundong Li, and Xia Hu.
+\newblock On {Interpretation} of {Network} {Embedding} via {Taxonomy}
+  {Induction}.
+\newblock In \emph{Proceedings of the 24th {ACM} {SIGKDD} {International}
+  {Conference} on {Knowledge} {Discovery} \& {Data} {Mining}}, {KDD} '18, pages
+  1812--1820, New York, NY, USA, July 2018. Association for Computing
+  Machinery.
+\newblock ISBN 978-1-4503-5552-0.
+\newblock \doi{10.1145/3219819.3220001}.
+\newblock URL \url{https://doi.org/10.1145/3219819.3220001}.
+
+\bibitem[Liu et~al.(2019)Liu, Ott, Goyal, Du, Joshi, Chen, Levy, Lewis,
+  Zettlemoyer, and Stoyanov]{liu_roberta_2019}
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer
+  Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov.
+\newblock {RoBERTa}: {A} {Robustly} {Optimized} {BERT} {Pretraining}
+  {Approach}, July 2019.
+\newblock URL \url{http://arxiv.org/abs/1907.11692}.
+\newblock Number: arXiv:1907.11692 arXiv:1907.11692 [cs].
+
+\bibitem[Madsen et~al.(2021)Madsen, Reddy, and Chandar]{madsen_post-hoc_2021}
+Andreas Madsen, Siva Reddy, and Sarath Chandar.
+\newblock Post-hoc {Interpretability} for {Neural} {NLP}: {A} {Survey}.
+\newblock \emph{arXiv:2108.04840 [cs]}, August 2021.
+\newblock URL \url{http://arxiv.org/abs/2108.04840}.
+\newblock arXiv: 2108.04840.
+
+\bibitem[Radford et~al.(2018)Radford, Narasimhan, Salimans, and
+  Sutskever]{radford_improving_nodate}
+Alec Radford, Karthik Narasimhan, Tim Salimans, and Ilya Sutskever.
+\newblock Improving {Language} {Understanding} by {Generative}
+  {Pre}-{Training}.
+\newblock page~12, 2018.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, Krueger, and
+  Sutskever]{radford_learning_2021}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock Learning {Transferable} {Visual} {Models} {From} {Natural} {Language}
+  {Supervision}.
+\newblock Technical Report arXiv:2103.00020, arXiv, February 2021.
+\newblock URL \url{http://arxiv.org/abs/2103.00020}.
+\newblock arXiv:2103.00020 [cs] type: article.
+
+\bibitem[Ravuri et~al.(2021)Ravuri, Lenc, Willson, Kangin, Lam, Mirowski,
+  Fitzsimons, Athanassiadou, Kashem, Madge, Prudden, Mandhane, Clark, Brock,
+  Simonyan, Hadsell, Robinson, Clancy, Arribas, and
+  Mohamed]{ravuri_skilful_2021}
+Suman Ravuri, Karel Lenc, Matthew Willson, Dmitry Kangin, Remi Lam, Piotr
+  Mirowski, Megan Fitzsimons, Maria Athanassiadou, Sheleem Kashem, Sam Madge,
+  Rachel Prudden, Amol Mandhane, Aidan Clark, Andrew Brock, Karen Simonyan,
+  Raia Hadsell, Niall Robinson, Ellen Clancy, Alberto Arribas, and Shakir
+  Mohamed.
+\newblock Skilful precipitation nowcasting using deep generative models of
+  radar.
+\newblock \emph{Nature}, 597\penalty0 (7878):\penalty0 672--677, September
+  2021.
+\newblock ISSN 1476-4687.
+\newblock \doi{10.1038/s41586-021-03854-z}.
+\newblock URL \url{https://www.nature.com/articles/s41586-021-03854-z}.
+\newblock Number: 7878 Publisher: Nature Publishing Group.
+
+\bibitem[Reimers and Gurevych(2019)]{reimers_sentence-bert_2019}
+Nils Reimers and Iryna Gurevych.
+\newblock Sentence-{BERT}: {Sentence} {Embeddings} using {Siamese}
+  {BERT}-{Networks}.
+\newblock Technical Report arXiv:1908.10084, arXiv, August 2019.
+\newblock URL \url{http://arxiv.org/abs/1908.10084}.
+\newblock arXiv:1908.10084 [cs] type: article.
+
+\bibitem[Sanh et~al.(2020)Sanh, Debut, Chaumond, and
+  Wolf]{sanh_distilbert_2020}
+Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf.
+\newblock {DistilBERT}, a distilled version of {BERT}: smaller, faster, cheaper
+  and lighter, February 2020.
+\newblock URL \url{http://arxiv.org/abs/1910.01108}.
+\newblock Number: arXiv:1910.01108 arXiv:1910.01108 [cs].
+
+\bibitem[Schrittwieser et~al.(2020)Schrittwieser, Antonoglou, Hubert, Simonyan,
+  Sifre, Schmitt, Guez, Lockhart, Hassabis, Graepel, Lillicrap, and
+  Silver]{schrittwieser_mastering_2020}
+Julian Schrittwieser, Ioannis Antonoglou, Thomas Hubert, Karen Simonyan,
+  Laurent Sifre, Simon Schmitt, Arthur Guez, Edward Lockhart, Demis Hassabis,
+  Thore Graepel, Timothy Lillicrap, and David Silver.
+\newblock Mastering {Atari}, {Go}, chess and shogi by planning with a learned
+  model.
+\newblock \emph{Nature}, 588\penalty0 (7839):\penalty0 604--609, December 2020.
+\newblock ISSN 1476-4687.
+\newblock \doi{10.1038/s41586-020-03051-4}.
+\newblock URL \url{https://www.nature.com/articles/s41586-020-03051-4}.
+\newblock Number: 7839 Publisher: Nature Publishing Group.
+
+\bibitem[Tenney et~al.(2019)Tenney, Das, and Pavlick]{tenney_bert_2019}
+Ian Tenney, Dipanjan Das, and Ellie Pavlick.
+\newblock {BERT} {Rediscovers} the {Classical} {NLP} {Pipeline}.
+\newblock In \emph{Proceedings of the 57th {Annual} {Meeting} of the
+  {Association} for {Computational} {Linguistics}}, pages 4593--4601, Florence,
+  Italy, 2019. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/P19-1452}.
+\newblock URL \url{https://www.aclweb.org/anthology/P19-1452}.
+
+\bibitem[Toral et~al.(2018)Toral, Castilho, Hu, and Way]{toral_attaining_2018}
+Antonio Toral, Sheila Castilho, Ke~Hu, and Andy Way.
+\newblock Attaining the {Unattainable}? {Reassessing} {Claims} of {Human}
+  {Parity} in {Neural} {Machine} {Translation}.
+\newblock In \emph{Proceedings of the {Third} {Conference} on {Machine}
+  {Translation}: {Research} {Papers}}, pages 113--123, Belgium, Brussels, 2018.
+  Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/W18-6312}.
+\newblock URL \url{http://aclweb.org/anthology/W18-6312}.
+
+\bibitem[Wang et~al.(2020)Wang, Liu, and Song]{wang_language_2020}
+Chenguang Wang, Xiao Liu, and Dawn Song.
+\newblock Language {Models} are {Open} {Knowledge} {Graphs}.
+\newblock \emph{arXiv:2010.11967 [cs]}, October 2020.
+\newblock URL \url{http://arxiv.org/abs/2010.11967}.
+\newblock arXiv: 2010.11967.
+
+\bibitem[West et~al.(2021)West, Bhagavatula, Hessel, Hwang, Jiang, Bras, Lu,
+  Welleck, and Choi]{west_symbolic_2021}
+Peter West, Chandra Bhagavatula, Jack Hessel, Jena~D. Hwang, Liwei Jiang,
+  Ronan~Le Bras, Ximing Lu, Sean Welleck, and Yejin Choi.
+\newblock Symbolic {Knowledge} {Distillation}: from {General} {Language}
+  {Models} to {Commonsense} {Models}, October 2021.
+\newblock URL \url{http://arxiv.org/abs/2110.07178}.
+\newblock Number: arXiv:2110.07178 arXiv:2110.07178 [cs].
+
+\bibitem[Yin et~al.(2019)Yin, Hay, and Roth]{yin_benchmarking_2019}
+Wenpeng Yin, Jamaal Hay, and Dan Roth.
+\newblock Benchmarking {Zero}-shot {Text} {Classification}: {Datasets},
+  {Evaluation} and {Entailment} {Approach}.
+\newblock Technical Report arXiv:1909.00161, arXiv, August 2019.
+\newblock URL \url{http://arxiv.org/abs/1909.00161}.
+\newblock arXiv:1909.00161 [cs] type: article.
+
+\bibitem[Zhu et~al.(2015)Zhu, Kiros, Zemel, Salakhutdinov, Urtasun, Torralba,
+  and Fidler]{Zhu2015AligningBA}
+Yukun Zhu, Ryan Kiros, Richard~S. Zemel, Ruslan Salakhutdinov, Raquel Urtasun,
+  Antonio Torralba, and Sanja Fidler.
+\newblock Aligning books and movies: Towards story-like visual explanations by
+  watching movies and reading books.
+\newblock \emph{2015 IEEE International Conference on Computer Vision (ICCV)},
+  pages 19--27, 2015.
+
+\end{thebibliography}

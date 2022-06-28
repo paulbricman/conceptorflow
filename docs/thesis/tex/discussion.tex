@@ -4,7 +4,7 @@
 
 \subsubsection{The same symbols can represent different concepts.}
 
-Upon inspecting low-dimensional state cloud projections, we observed the presence of distinctive clusters across latent space (see Fig. \ref{fig:plant}). For instance, the state cloud of the symbol "plant" appears to be populated by at least three clusters. To investigate this, we ran a K-means clustering ($K=3$) procedure on the "plant" state cloud and surfaced the contexts which yielded contextual embeddings closest to the cluster centroids. Upon inspection of those contexts, we noticed that the context sets contained distinctive word senses, roughly corresponding to (1) vegetation, (2) the action of planting, and (3) factories (see Table \ref{tab:samples}).
+Upon inspecting low-dimensional state cloud projections, we observed the presence of distinctive clusters across latent space (see Figure \ref{fig:plant}). For instance, the state cloud of the symbol "plant" appears to be populated by at least three clusters. To investigate this, we ran a K-means clustering ($K=3$) procedure on the "plant" state cloud and surfaced the contexts which yielded contextual embeddings closest to the cluster centroids. Upon inspection of those contexts, we noticed that the context sets contained distinctive word senses, roughly corresponding to (1) vegetation, (2) the action of planting, and (3) factories (see Table \ref{tab:samples}).
 
 \begin{figure}[h]
     \centering
@@ -39,7 +39,7 @@ This diversity of meanings assumed by the same symbol across the text corpus cas
 
 \subsubsection{State clouds are non-linear.}
 
-While we employ conceptors as compact elliptical objects which approximate high-dimensional state clouds of contextual embeddings, their limited expressivity might fail to capture the intricate non-linear layout of real-world embeddings. Low-dimensional PCA projections of several state clouds of BERT embeddings radically diverge from Gaussian distributions, bringing into question the suitability of elliptical conceptors to represent them (see Fig. \ref{fig:earth}). However, we note that state clouds of less ambiguous terms (i.e. limited number of word senses) appear more well-formed. Non-linearities might arise mainly from diverse word senses being assumed by the same symbols.
+While we employ conceptors as compact elliptical objects which approximate high-dimensional state clouds of contextual embeddings, their limited expressivity might fail to capture the intricate non-linear layout of real-world embeddings. Low-dimensional PCA projections of several state clouds of BERT embeddings radically diverge from Gaussian distributions, bringing into question the suitability of elliptical conceptors to represent them (see Figure \ref{fig:earth}). However, we note that state clouds of less ambiguous terms (i.e. limited number of word senses) appear more well-formed. Non-linearities might arise mainly from diverse word senses being assumed by the same symbols.
 
 \begin{figure}[h]
     \centering
@@ -77,7 +77,7 @@ In the context of the present work, all those values have been specified manuall
 
 \subsubsection{Beyond abstraction ordering}
 
-While this work focuses solely on the meronymous relationship of abstraction between to concepts, it is conceivable that the difference matrix computed in NSC as an intermediate step contains a rich representation of other relationships between concepts. This is reminiscent of the seemingly algebraic properties of prototype word embeddings (e.g. "king" + "woman" - "man" ~ "queen"), which appear to encode diverse analogies and conceptual relationships. The relative spatial layout of entire state clouds might provide similar information.
+While this work focuses solely on the meronymous relationship of abstraction between to concepts, it is conceivable that the difference matrix computed in NSC as an intermediate step contains a rich representation of other relationships between concepts. This is reminiscent of the seemingly algebraic properties of prototype word embeddings (e.g. "king" + "woman" - "man" $\approx$ "queen"), which appear to encode diverse analogies and conceptual relationships. The relative spatial layout of entire state clouds might provide similar information.
 
 However, mathematical objects depicting the aggregate shape of high-dimensional space clouds are likely to capture more information about the semantics of the symbols involved, compared to more rudimentary single prototype embeddings. Assuming the benefit of employing more expressive representation which stays faithful to large sets of exemplars at once, the difference matrices obtained from pairs of conceptor objects might also represent more nuance compared to the less expressive vector of displacement between prototype embeddings.
 
@@ -90,3 +90,13 @@ The present work focuses solely on extracting a knowledge graph from the state c
 In the present work, we employ a rather specific heuristic for quantifying the relation of abstraction between two conceptors. For completeness, we mean-pool the eigenvalues of their difference matrix. Large positive values indicate the first conceptor is deemed to be more abstract than the second, while large negative values indicate the reverse. Values close to zero indicate a limited relation of abstraction between the two.
 
 However, there might be other -- better mathematically-motivated -- ways of quantifying this relation. For instance, one might opt for different pooling mechanisms (e.g. median), which are more robust against outliers. Alternatively, one might eliminate the eigenvalue pooling mechanism entirely, and focus instead on the \textit{ratio} between positive and negative eigenvalues.
+
+\subsection{Conclusion}
+
+In sum, the present work has been centered around the following contributions:
+
+\begin{itemize}
+    \item We have provided qualitative evidence highlighting the connection between the spatial layout of nested state clouds and the abstraction relation of the concepts they represent.
+    \item We have formulated an novel algorithm for flexibly distilling a set of high-dimensional state clouds into a compact directed graph which depicts relations of abstraction.
+    \item We have drawn evidence-based observations on the way individual symbols relate to concepts in contextual embeddings.
+\end{itemize}

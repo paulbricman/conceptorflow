@@ -184,12 +184,12 @@
   pages     = {436--444}
 }
 
-@misc{noauthor_state---art_nodate,
-  title    = {State-of-the-{Art} {Speech} {Recognition} with {Sequence}-to-{Sequence} {Models}},
-  url      = {https://ieeexplore.ieee.org/document/8462105/},
-  abstract = {Attention-based encoder-decoder architectures such as Listen, Attend, and Spell (LAS), subsume the acoustic, pronunciation and language model components of a traditional automatic speech recognition (ASR) system into a single neural network. In previous work, we have shown that such architectures are comparable to state-of-the-art ASR systems on dictation tasks, but it was not clear if such architectures would be practical for more challenging tasks such as voice search. In this work, we explore a variety of structural and optimization improvements to our LAS model which significantly improve performance. On the structural side, we show that word piece models can be used instead of graphemes. We also introduce a multi-head attention architecture, which offers improvements over the commonly-used single-head attention. On the optimization side, we explore synchronous training, scheduled sampling, label smoothing, and minimum word error rate optimization, which are all shown to improve accuracy. We present results with a unidirectional LSTM encoder for streaming recognition. On a 12, 500 hour voice search task, we find that the proposed changes improve the WER from 9.2\% to 5.6\%, while the best conventional system achieves 6.7\%; on a dictation task our model achieves a WER of 4.1\% compared to 5\% for the conventional system.},
-  language = {en-US},
-  urldate  = {2022-05-18}
+@article{noauthor_state---art_nodate,
+  title   = {State-of-the-Art Speech Recognition with Sequence-to-Sequence Models},
+  author  = {Chung-Cheng Chiu and Tara N. Sainath and Yonghui Wu and Rohit Prabhavalkar and Patrick Nguyen and Z. Chen and Anjuli Kannan and Ron J. Weiss and Kanishka Rao and Katya Gonina and Navdeep Jaitly and Bo Li and Jan Chorowski and Michiel Bacchiani},
+  journal = {2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  year    = {2018},
+  pages   = {4774-4778}
 }
 
 @techreport{radford_learning_2021,
@@ -220,11 +220,11 @@
 }
 
 @article{bahdanau_neural_2016,
-  title={Neural Machine Translation by Jointly Learning to Align and Translate},
-  author={Dzmitry Bahdanau and Kyunghyun Cho and Yoshua Bengio},
-  journal={CoRR},
-  year={2015},
-  volume={abs/1409.0473}
+  title   = {Neural Machine Translation by Jointly Learning to Align and Translate},
+  author  = {Dzmitry Bahdanau and Kyunghyun Cho and Yoshua Bengio},
+  journal = {CoRR},
+  year    = {2015},
+  volume  = {abs/1409.0473}
 }
 
 @inproceedings{tenney_bert_2019,
@@ -297,28 +297,28 @@
 }
 
 @article{devlin_bert_nodate,
-  title={BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
-  author={Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova},
-  journal={ArXiv},
-  year={2019},
-  volume={abs/1810.04805}
+  title   = {BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding},
+  author  = {Jacob Devlin and Ming-Wei Chang and Kenton Lee and Kristina Toutanova},
+  journal = {ArXiv},
+  year    = {2019},
+  volume  = {abs/1810.04805}
 }
 
 @article{Zhu2015AligningBA,
-  title={Aligning Books and Movies: Towards Story-Like Visual Explanations by Watching Movies and Reading Books},
-  author={Yukun Zhu and Ryan Kiros and Richard S. Zemel and Ruslan Salakhutdinov and Raquel Urtasun and Antonio Torralba and Sanja Fidler},
-  journal={2015 IEEE International Conference on Computer Vision (ICCV)},
-  year={2015},
-  pages={19-27}
+  title   = {Aligning Books and Movies: Towards Story-Like Visual Explanations by Watching Movies and Reading Books},
+  author  = {Yukun Zhu and Ryan Kiros and Richard S. Zemel and Ruslan Salakhutdinov and Raquel Urtasun and Antonio Torralba and Sanja Fidler},
+  journal = {2015 IEEE International Conference on Computer Vision (ICCV)},
+  year    = {2015},
+  pages   = {19-27}
 }
 
 @article{jaeger_using_nodate,
-  title    = {Using {Conceptors} to {Manage} {Neural} {Long}-{Term} {Memories} for {Temporal} {Patterns}},
-  abstract = {Biological brains can learn, recognize, organize, and re-generate large repertoires of temporal patterns. Here I propose a mechanism of neurodynamical pattern learning and representation, called conceptors, which oﬀers an integrated account of a number of such phenomena and functionalities. It becomes possible to store a large number of temporal patterns in a single recurrent neural network. In the recall process, stored patterns can be morphed and ”focussed”. Parametric families of patterns can be learnt from a very small number of examples. Stored temporal patterns can be content-addressed in ways that are analog to recalling static patterns in Hopﬁeld networks.},
-  language = {en},
-  author   = {Jaeger, Herbert},
-  pages    = {43},
-  file     = {Jaeger - Using Conceptors to Manage Neural Long-Term Memori.pdf:/home/paulbricman/Zotero/storage/QCV3TG2L/Jaeger - Using Conceptors to Manage Neural Long-Term Memori.pdf:application/pdf}
+  title   = {Using Conceptors to Manage Neural Long-Term Memories for Temporal Patterns},
+  author  = {Herbert Jaeger},
+  journal = {J. Mach. Learn. Res.},
+  year    = {2017},
+  volume  = {18},
+  pages   = {13:1-13:43}
 }
 
 @misc{jaeger_controlling_2017,
@@ -470,20 +470,17 @@
   file      = {Hinton - 2021 - How to represent part-whole hierarchies in a neura.pdf:/home/paulbricman/Zotero/storage/LWRNMG8K/Hinton - 2021 - How to represent part-whole hierarchies in a neura.pdf:application/pdf}
 }
 
-@article{jain_attention_nodate,
-  title    = {Attention is not {Explanation}},
-  abstract = {Attention mechanisms have seen wide adoption in neural NLP models. In addition to improving predictive performance, these are often touted as affording transparency: models equipped with attention provide a distribution over attended-to input units, and this is often presented (at least implicitly) as communicating the relative importance of inputs. However, it is unclear what relationship exists between attention weights and model outputs. In this work we perform extensive experiments across a variety of NLP tasks that aim to assess the degree to which attention weights provide meaningful “explanations" for predictions. We ﬁnd that they largely do not. For example, learned attention weights are frequently uncorrelated with gradient-based measures of feature importance, and one can identify very different attention distributions that nonetheless yield equivalent predictions. Our ﬁndings show that standard attention modules do not provide meaningful explanations and should not be treated as though they do. Code to reproduce all experiments is available at https://github.com/successar/ AttentionExplanation.},
-  language = {en},
-  author   = {Jain, Sarthak and Wallace, Byron C},
-  pages    = {14},
-  file     = {Jain and Wallace - Attention is not Explanation.pdf:/home/paulbricman/Zotero/storage/LSRDLPP7/Jain and Wallace - Attention is not Explanation.pdf:application/pdf}
+@inproceedings{jain_attention_nodate,
+  title     = {Attention is not Explanation},
+  author    = {Sarthak Jain and Byron C. Wallace},
+  booktitle = {NAACL},
+  year      = {2019}
 }
 
-@misc{noauthor_multimodal_nodate,
-  title   = {Multimodal {Neurons} in {Artificial} {Neural} {Networks}},
-  url     = {https://distill.pub/2021/multimodal-neurons/},
-  urldate = {2022-05-18},
-  file    = {Multimodal Neurons in Artificial Neural Networks:/home/paulbricman/Zotero/storage/P8T3TSY7/multimodal-neurons.html:text/html}
+@inproceedings{noauthor_multimodal_nodate,
+  title  = {Multimodal Neurons in Artificial Neural Networks},
+  author = {Gabriel Goh and Nick Cammarata and Chelsea Voss and Shan Carter and Michael Petrov and Ludwig Schubert and Alec Radford and Christopher Olah},
+  year   = {2021}
 }
 
 @techreport{reimers_sentence-bert_2019,
